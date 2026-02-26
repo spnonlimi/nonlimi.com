@@ -9,7 +9,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -29,7 +29,6 @@
         <li><a href="#capabilities">CAPABILITIES</a></li>
         <li><a href="#comparison">COMPARISON</a></li>
         <li><a href="#usecases">USE CASES</a></li>
-        <li><a href="#team">TEAM</a></li>
       </ul>
 
       <a href="#cta" class="btn-nav">GET STARTED</a>
@@ -45,7 +44,6 @@
       <a href="#capabilities">CAPABILITIES</a>
       <a href="#comparison">COMPARISON</a>
       <a href="#usecases">USE CASES</a>
-      <a href="#team">TEAM</a>
       <a href="#cta" class="mobile-cta">GET STARTED</a>
     </div>
   </nav>
@@ -55,6 +53,11 @@
   ============================================================ -->
   <section id="hero" class="hero">
     <canvas id="gridCanvas" class="hero-canvas"></canvas>
+
+    <!-- Gradient mesh blobs -->
+    <div class="hero-blob hero-blob-1"></div>
+    <div class="hero-blob hero-blob-2"></div>
+    <div class="hero-blob hero-blob-3"></div>
 
     <!-- Targeting reticle decorations -->
     <div class="reticle reticle-tl"></div>
@@ -67,8 +70,10 @@
         <span class="label-prefix">// </span>NONLIMI INDUSTRIES_<span class="cursor">|</span>
       </div>
 
-      <h1 class="hero-headline reveal">
-        SIMULATION<br />INFRASTRUCTURE<br /><span class="headline-accent">FOR PHYSICAL AI</span>
+      <h1 class="hero-headline reveal" data-animate="kinetic">
+        <span class="headline-word" style="--i:0">SIMULATION</span><br />
+        <span class="headline-word" style="--i:1">INFRASTRUCTURE</span><br />
+        <span class="headline-accent" data-shimmer><span class="headline-word" style="--i:2">FOR PHYSICAL AI</span></span>
       </h1>
 
       <p class="hero-sub reveal">
@@ -104,6 +109,11 @@
     </div>
   </section>
 
+  <!-- Curved section divider -->
+  <div class="section-curve section-curve--white-to-gray">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="#F8F9FB"/></svg>
+  </div>
+
   <!-- ============================================================
        PLATFORM — 01
   ============================================================ -->
@@ -129,7 +139,7 @@
             </div>
             <div class="layer-content">
               <h3 class="layer-title">OPEN-SOURCE CORE</h3>
-              <p class="layer-desc">Physics engine, sensor models, scenario runtime. Start building immediately — no license negotiation, no sales calls. <strong>Free forever. Apache 2.0.</strong></p>
+              <p class="layer-desc">Sensor models, scenario runtime. Start building immediately — no license negotiation, no sales calls.</p>
             </div>
             <div class="layer-tag tag-free">FREE TIER</div>
           </div>
@@ -181,6 +191,11 @@
 
     </div>
   </section>
+
+  <!-- Curved section divider -->
+  <div class="section-curve section-curve--gray-to-white">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,0 C360,56 1080,56 1440,0 L1440,56 L0,56 Z" fill="#FFFFFF"/></svg>
+  </div>
 
   <!-- ============================================================
        CAPABILITIES — 02
@@ -258,6 +273,11 @@
       </div>
     </div>
   </section>
+
+  <!-- Curved section divider -->
+  <div class="section-curve section-curve--white-to-gray">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="#F8F9FB"/></svg>
+  </div>
 
   <!-- ============================================================
        FEATURE COMPARISON — 03
@@ -427,6 +447,11 @@
     </div>
   </section>
 
+  <!-- Curved section divider -->
+  <div class="section-curve section-curve--gray-to-white">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,0 C360,56 1080,56 1440,0 L1440,56 L0,56 Z" fill="#FFFFFF"/></svg>
+  </div>
+
   <!-- ============================================================
        USE CASES — 04
   ============================================================ -->
@@ -542,84 +567,13 @@
     </div>
   </section>
 
-  <!-- ============================================================
-       TEAM — 05
-  ============================================================ -->
-  <section id="team" class="section-team">
-    <div class="container">
-
-      <div class="section-header reveal">
-        <span class="section-label">05 // THE TEAM</span>
-        <h2 class="section-headline">Built by simulation<br />veterans.</h2>
-        <p class="section-desc">
-          Decades of experience building high-fidelity simulation systems at scale — from consumer to classified.
-        </p>
-      </div>
-
-      <div class="team-grid">
-
-        <!-- Founder -->
-        <div class="team-card team-founder reveal">
-          <div class="team-avatar avatar-founder">
-            <span class="avatar-initials">SP</span>
-            <div class="avatar-ring"></div>
-            <div class="avatar-glow"></div>
-          </div>
-          <div class="team-info">
-            <div class="team-role-badge">FOUNDER & CEO</div>
-            <h3 class="team-name">Sviatoslav Pohrebnoi</h3>
-            <p class="team-bio">15 years in real-time 3D simulation. Scaled a simulation company from 0 to 1,400+ people. Evaluated 200+ investments as VC.</p>
-            <div class="team-tags">
-              <span class="ttag">REAL-TIME 3D</span>
-              <span class="ttag">SCALED 0→1400</span>
-              <span class="ttag">VC</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Advisor 1 -->
-        <div class="team-card reveal">
-          <div class="team-avatar avatar-a1">
-            <span class="avatar-initials">BW</span>
-            <div class="avatar-ring"></div>
-            <div class="avatar-glow"></div>
-          </div>
-          <div class="team-info">
-            <div class="team-role-badge">ADVISOR</div>
-            <h3 class="team-name">Brian Waddle</h3>
-            <p class="team-bio">30+ years in simulation middleware. Co-founded a leading game studio. Former VP at major technology companies.</p>
-            <div class="team-tags">
-              <span class="ttag">MIDDLEWARE</span>
-              <span class="ttag">GAME STUDIO FOUNDER</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Advisor 2 -->
-        <div class="team-card reveal">
-          <div class="team-avatar avatar-a2">
-            <span class="avatar-initials">KW</span>
-            <div class="avatar-ring"></div>
-            <div class="avatar-glow"></div>
-          </div>
-          <div class="team-info">
-            <div class="team-role-badge">ADVISOR</div>
-            <h3 class="team-name">Kristoffer Waardahl</h3>
-            <p class="team-bio">20+ years shipping high-fidelity rendering and simulation tech at AAA scale. Chief of Studios at a major game technology company.</p>
-            <div class="team-tags">
-              <span class="ttag">HIGH-FIDELITY SIM</span>
-              <span class="ttag">AAA SCALE</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
+  <!-- Curved section divider -->
+  <div class="section-curve section-curve--white-to-gray">
+    <svg viewBox="0 0 1440 56" preserveAspectRatio="none"><path d="M0,56 C360,0 1080,0 1440,56 L1440,56 L0,56 Z" fill="#F8F9FB"/></svg>
+  </div>
 
   <!-- ============================================================
-       GET STARTED CTA — 06
+       GET STARTED CTA — 05
   ============================================================ -->
   <section id="cta" class="section-cta">
     <canvas id="ctaCanvas" class="cta-canvas"></canvas>
@@ -627,7 +581,7 @@
     <div class="container">
 
       <div class="cta-inner reveal">
-        <span class="section-label">06 // GET STARTED</span>
+        <span class="section-label">05 // GET STARTED</span>
         <h2 class="cta-headline">BUILD FASTER.<br />TEST SMARTER.<br /><span class="headline-accent">SHIP SAFER.</span></h2>
         <p class="cta-sub">Join the developers and defense teams building the future of autonomous systems.</p>
 
