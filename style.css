@@ -1791,6 +1791,11 @@ button {
     display: none;
   }
 
+  /* Scroll indicator — hide on mobile to avoid overlap */
+  .hero-scroll-indicator {
+    display: none;
+  }
+
   /* Nav inner */
   .nav-inner {
     padding: 0 20px;
