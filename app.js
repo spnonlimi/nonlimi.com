@@ -51,9 +51,17 @@
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.08, rootMargin: '0px 0px 0px 0px' });
 
-  els.forEach(el => io.observe(el));
+  // Immediately reveal elements already in viewport on load
+  els.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('visible');
+    } else {
+      io.observe(el);
+    }
+  });
 })();
 
 /* ---- Canvas Dot Grid (Hero) ---- */
