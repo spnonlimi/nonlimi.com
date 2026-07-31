@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex, nofollow" />
 <title>Gate the Merge — Nonlimi Early Partner Program</title>
-<meta name="description" content="Nonlimi is the validation layer that turns simulation into pass/fail release evidence. Your robot's behaviours run on every pull request and return a deterministic verdict. Nonlimi Dynamics S.L., Madrid." />
+<meta name="description" content="Nonlimi is the validation layer that turns simulation into pass/fail release evidence. A scenario runs, a comparator checks it against a recorded baseline, and CI receives a reason-coded verdict. Nonlimi Dynamics S.L., Madrid." />
 <meta property="og:title" content="Nonlimi Dynamics — Gate the Merge" />
 <meta property="og:description" content="The validation layer that turns simulation into pass/fail release evidence for ROS 2 robotics." />
 <meta property="og:type" content="website" />
@@ -176,10 +176,6 @@ p+p{margin-top:16px}
 @media(max-width:1040px){.tl-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:620px){.tl-grid{grid-template-columns:1fr}}
 
-/* ---------- SLOTS ---------- */
-.slots{display:flex;flex-wrap:wrap;gap:var(--gutter);margin-top:32px}
-.slot{border:1px dashed var(--rule);background:var(--sheet);padding:20px 26px;
-      font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--graphite)}
 .mail{display:inline-block;margin-top:38px;font-family:var(--mono);font-size:clamp(15px,2.4vw,22px);
       color:var(--ink);border-bottom:3px solid var(--stamp);padding-bottom:5px}
 
@@ -225,20 +221,20 @@ footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono)
 
     <p class="sub">
       Nonlimi is the validation layer that turns simulation into pass/fail release
-      evidence. Your robot's behaviours run on every pull request and return a
-      deterministic verdict.
+      evidence. A scenario runs, a comparator checks the result against a recorded
+      baseline, and CI receives a reason-coded verdict.
     </p>
 
     <div class="spec">
-      <div class="spec-h"><span>CI &middot; PULL REQUEST 248</span><span>EXIT CODE IS THE VERDICT</span></div>
+      <div class="spec-h"><span>CERTIFIED BAKED SCENARIO &middot; EXAMPLE OUTPUT</span><span>EXIT CODE IS THE VERDICT</span></div>
       <div class="spec-b">
-        <span class="g">$</span> nonlimi run --baseline main<br />
-        <span class="g">&rsaquo;</span> dock-approach-occluded &nbsp;&nbsp;&nbsp;<span class="pass">PASS</span><br />
-        <span class="g">&rsaquo;</span> aisle-traverse-degraded &nbsp;&nbsp;<span class="pass">PASS</span><br />
-        <span class="g">&rsaquo;</span> dynamic-obstacle-cut-in &nbsp;<span class="fail">FAIL</span>
-        <span class="g">&nbsp;min_clearance below baseline</span><br /><br />
-        <span class="fail">VERDICT FAIL</span> <span class="g">&middot; EXIT 1 &middot; MERGE BLOCKED</span>
-      </div>
+          <span class="g">$</span> nonlimi test --baseline artifacts/baseline/<br />
+          <span class="g">&rsaquo;</span> scenario 01 &nbsp;&nbsp;&nbsp;<span class="pass">PASS</span><br />
+          <span class="g">&rsaquo;</span> scenario 02 &nbsp;&nbsp;&nbsp;<span class="pass">PASS</span><br />
+          <span class="g">&rsaquo;</span> scenario 03 &nbsp;&nbsp;&nbsp;<span class="fail">FAIL</span>
+          <span class="g">&nbsp;min_clearance below baseline</span><br /><br />
+          <span class="fail">VERDICT FAIL</span> <span class="g">&middot; EXIT 1</span>
+        </div>
     </div>
 
     <div class="fields">
@@ -273,13 +269,13 @@ footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono)
   <div class="punch"><i></i><i></i><i></i></div>
   <div class="bled">02</div>
   <div class="field pad z wrap">
-    <div class="lbl">02 &mdash; METHOD &middot; ALL FOUR STEPS SHIP TODAY</div>
-    <h2>Four steps, one exit code.</h2>
+    <div class="lbl">02 &mdash; METHOD &middot; STEPS 1, 2 AND 4 BUILT &middot; CI INTEGRATION IN ACTIVE IMPLEMENTATION</div>
+    <h2>Four steps. Three are built.</h2>
     <div class="g4" style="margin-top:44px">
       <div class="card">
         <div class="num">STEP 01</div>
         <h3>Bring your platform</h3>
-        <p>Your URDF and the behaviours that actually matter. We assemble the scenes.</p>
+        <p>URDF-to-USD import, plus assisted MJCF and runtime integration. We do this with you — it is not push-button today.</p>
       </div>
       <div class="card">
         <div class="num">STEP 02</div>
@@ -289,7 +285,7 @@ footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono)
       <div class="card">
         <div class="num">STEP 03</div>
         <h3>Gate the merge</h3>
-        <p>A GitHub Action runs the scenarios on every pull request. The verdict is the exit code.</p>
+        <p>The GitHub Action runs today against a certified baked scenario. Running <em>your</em> behaviours on every pull request is in active implementation, not shipped.</p>
       </div>
       <div class="card">
         <div class="num">STEP 04</div>
@@ -319,7 +315,7 @@ footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono)
           <div class="row"><span class="n">USD scene graph, physics write-back</span><span class="v ok">SHIPPED</span></div>
           <div class="row"><span class="n">ROS 2 bridge</span><span class="v ok">PUBLISH-ONLY</span></div>
           <div class="row"><span class="n">MCAP / COCO export</span><span class="v ok">SHIPPED</span></div>
-          <div class="row"><span class="n">Datasheet-cited LiDAR presets, real noise A/B</span><span class="v ok">N = 6</span></div>
+          <div class="row"><span class="n">Datasheet-cited LiDAR preset definitions</span><span class="v ok">SIX DEFINITIONS</span></div>
         </div>
       </div>
 
@@ -337,6 +333,8 @@ footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono)
           <div class="row"><span class="n">A sim-to-real correlation number. We do not have one, and nothing on this page implies one.</span><span class="v no">NOT MEASURED</span></div>
           <div class="row"><span class="n">Closed-loop against your live ROS 2 stack. The bridge is publish-only today.</span><span class="v no">NOT BUILT</span></div>
           <div class="row"><span class="n">Cross-hardware or GPU byte-stability. The GPU backend rank-correlates with CPU.</span><span class="v no">SRCC 0.9969 &middot; RANK ONLY</span></div>
+          <div class="row"><span class="n">Arbitrary ROS 2 closed loop against your live stack.</span><span class="v no">NOT BUILT</span></div>
+          <div class="row"><span class="n">Arbitrary URDF-to-runnable-physics onboarding. Integration is assisted, not automatic.</span><span class="v no">NOT BUILT</span></div>
         </div>
       </div>
 
@@ -345,15 +343,14 @@ footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono)
     <div class="note">
       <div class="k">DETERMINISM &mdash; STATED PRECISELY</div>
       <p>
-        Same seed, same architecture, in-process — byte-stable verdicts, measured on
-        same-architecture CPU runs.
+        Same seed, same architecture, in-process. Certified today at
+        <strong>N = 2 executions on the same machine</strong>.
       </p>
       <p style="margin-top:14px" class="cap">
-        A published 400-run flip-count series is <span class="pend">PLANNED &middot; NOT DONE</span>
-        &nbsp;When it lands it appears here as a measured figure with N stated, not as an adjective.
+        <span class="pend">N = 400 + SECOND-HOST SUBSET &middot; PLANNED</span>
+        &nbsp;When that lands it appears here as a measured flip count with N stated, not as an adjective.
       </p>
     </div>
-
   </div>
 </section>
 
@@ -388,12 +385,11 @@ footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono)
   <div class="bled">05</div>
   <div class="field pad z wrap">
     <div class="lbl">05 &mdash; CONTACT</div>
-    <h2>We are forming a first cohort of at most three.</h2>
-    <div class="slots">
-      <div class="slot">SLOT 01 &mdash; OPEN</div>
-      <div class="slot">SLOT 02 &mdash; OPEN</div>
-      <div class="slot">SLOT 03 &mdash; OPEN</div>
-    </div>
+    <h2>Get in touch.</h2>
+    <p style="margin-top:24px">
+      If you are running ROS 2 on real robots and release confidence is your bottleneck,
+      we would like to hear about it. A conversation, not a sales process.
+    </p>
 
     <a class="mail" href="mailto:sp@nonlimi.com">sp@nonlimi.com</a>
   </div>
