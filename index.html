@@ -4,178 +4,238 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Nonlimi Dynamics — The Validation Layer for Physical AI</title>
-<meta name="description" content="Nonlimi builds the layer that turns simulation into release evidence: a machine-checkable verdict on whether a change to an autonomous system is fit to ship. Nonlimi Dynamics S.L., Madrid." />
+<meta name="description" content="Nonlimi is the validation layer for physical AI. We turn simulation into release evidence: a machine-checkable verdict on whether a change to an autonomous system is fit to ship. Nonlimi Dynamics S.L., Madrid." />
 <meta property="og:title" content="Nonlimi Dynamics — The Validation Layer for Physical AI" />
-<meta property="og:description" content="We make simulation produce evidence, not impressions." />
+<meta property="og:description" content="A new form of life, documented before release." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nonlimi.com/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;600&family=Martian+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Saira:wght@400;500;600&family=Spectral:ital,wght@0,500;1,400&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <style>
 /* ==========================================================
-   NONLIMI DYNAMICS S.L. — COMPANY SITE, ON THE RECORD SYSTEM
-   Palette, type, grid and rules per Visual Guidelines REV A.
-   Square only: no radius, no shadow, no gradient, anywhere.
+   NONLIMI DYNAMICS S.L. — "THE NEW SPECIES" (direction 7a)
+   Pigment on plate: no pure white, no pure black.
+   Radius 0 everywhere. No shadows. Depth = hairlines + tints.
+   Spectral is CAGED: display headlines and italic captions only.
    ========================================================== */
 :root{
-  --stock:#ECEEEF; --sheet:#F8F9FA; --rule:#CFD4D7;
-  --graphite:#6D747A; --ink:#191D20; --stamp:#C1462A;
-  --sans:'Saira',system-ui,sans-serif;
+  --plate:#F8F5EC; --plate-2:#F4F1E8; --tint:#F1ECDD;
+  --rule:#D3CCB8; --rule-2:#DDD6C2; --chip:#C6BFA9;
+  --ink:#1C1A14; --body:#4A463A; --muted:#8D8672;
+  --museum:#1E3B32; --museum-rule:#2A4436;
+  --oxblood:#6E2B24;
+  --ui:'Saira',system-ui,sans-serif;
+  --serif:'Spectral',Georgia,serif;
   --mono:'Martian Mono',ui-monospace,monospace;
-  --punch:44px; --margin:44px; --gutter:12px;
+  --pad:clamp(20px,4.5vw,64px);
 }
 *{box-sizing:border-box;margin:0;padding:0;border-radius:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
 body{
-  background:var(--stock); color:var(--ink);
-  font-family:var(--sans); font-weight:400;
+  background:var(--plate); color:var(--body);
+  font-family:var(--ui); font-weight:400;
   font-size:16px; line-height:1.7;
   font-variant-numeric:tabular-nums;
   -webkit-font-smoothing:antialiased;
 }
-img,svg{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-code{font-family:var(--mono);font-size:.86em}
+svg{display:block;max-width:100%}
 
-/* ---------- METADATA RAIL — 4 fields, never more ---------- */
-.rail{
-  position:sticky; top:0; z-index:50;
-  background:var(--ink); color:var(--stock);
-  font-family:var(--mono); font-size:11px; font-weight:400;
-  letter-spacing:0; text-transform:uppercase;
-  display:flex; align-items:stretch;
-}
-.rail-mark{padding:12px 20px;font-weight:600;letter-spacing:.06em;border-right:1px solid rgba(236,238,239,.14);white-space:nowrap}
-.rail-fields{display:flex;flex:1;min-width:0;overflow:hidden}
-.rail-f{padding:12px 20px;border-right:1px solid rgba(236,238,239,.14);color:rgba(236,238,239,.62);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rail-f b{color:var(--stock);font-weight:400}
-.rail-nav{display:flex;margin-left:auto}
-.rail-nav a{padding:12px 16px;color:rgba(236,238,239,.62);border-left:1px solid rgba(236,238,239,.14);transition:color .12s,background .12s}
-.rail-nav a:hover{color:var(--stock);background:rgba(236,238,239,.08)}
-@media(max-width:1080px){.rail-nav{display:none}.rail-f:nth-child(n+3){display:none}}
+/* ---------- RECORD RAIL ---------- */
+.rail{position:sticky;top:0;z-index:50;background:var(--museum);color:var(--plate);
+  font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:.18em;
+  text-transform:uppercase;display:flex;align-items:stretch}
+.rail-m{padding:11px 18px;font-weight:500;letter-spacing:.30em;
+  border-right:1px solid var(--museum-rule);white-space:nowrap}
+.rail-f{padding:11px 18px;border-right:1px solid var(--museum-rule);
+  color:rgba(248,245,236,.58);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rail-f b{color:var(--plate);font-weight:400}
+.rail-n{display:flex;margin-left:auto}
+.rail-n a{padding:11px 14px;color:rgba(248,245,236,.58);
+  border-left:1px solid var(--museum-rule);transition:color .12s}
+.rail-n a:hover{color:var(--oxblood);background:rgba(248,245,236,.04)}
+@media(max-width:1100px){.rail-n{display:none}.rail-f:nth-child(n+4){display:none}}
 
-/* ---------- SHEET / PUNCH COLUMN ---------- */
-.sheet{position:relative;background:var(--stock)}
-.punch{position:absolute;left:0;top:0;bottom:0;width:var(--punch);border-right:1px solid var(--rule);background:var(--sheet);display:flex;flex-direction:column;align-items:center;padding-top:60px;gap:120px;z-index:1}
-.punch i{display:block;width:12px;height:12px;border:1px solid var(--rule);background:var(--stock)}
-@media(max-width:820px){.punch{display:none}:root{--punch:0px;--margin:20px}}
-.field{padding-left:calc(var(--punch) + var(--margin));padding-right:var(--margin)}
-.wrap{max-width:1460px}
+/* ---------- SHEET ---------- */
+.field{padding-left:var(--pad);padding-right:var(--pad)}
+.wrap{max-width:1380px;margin:0 auto}
+section{border-bottom:1px solid var(--rule);position:relative}
+.pad{padding-top:clamp(56px,7vw,104px);padding-bottom:clamp(56px,7vw,104px)}
+.alt{background:var(--plate-2)}
 
-/* ---------- SECTIONS ---------- */
-section{position:relative;border-bottom:1px solid var(--rule);overflow:hidden}
-.pad{padding-top:84px;padding-bottom:84px}
-.lbl{font-family:var(--mono);font-size:11px;text-transform:uppercase;color:var(--graphite);margin-bottom:28px;letter-spacing:0}
-h1{font-weight:600;text-transform:uppercase;font-size:clamp(34px,6.6vw,68px);line-height:1.02;letter-spacing:-.005em}
-h2{font-weight:600;text-transform:uppercase;font-size:clamp(24px,3.4vw,32px);line-height:1.12;max-width:20ch}
-h3{font-weight:600;font-size:18px;line-height:1.3;text-transform:uppercase;letter-spacing:.01em}
-p{max-width:64ch;line-height:1.7}
-p+p{margin-top:16px}
-.cap{font-size:14px;color:var(--graphite);line-height:1.6}
-.bled{position:absolute;right:-.06em;bottom:-.30em;z-index:0;font-family:var(--mono);font-weight:600;line-height:.8;font-size:clamp(180px,34vw,420px);color:var(--rule);opacity:.55;pointer-events:none;user-select:none}
-.z{position:relative;z-index:2}
+/* ---------- TYPE ---------- */
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:26px}
+.lbl b{color:var(--oxblood);font-weight:500}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(32px,4.6vw,56px);
+  line-height:1.14;color:var(--ink);letter-spacing:-.005em;max-width:17ch}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.2vw,40px);
+  line-height:1.16;color:var(--ink);max-width:20ch}
+h3{font-family:var(--ui);font-weight:600;font-size:15px;line-height:1.35;
+  text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
+p{max-width:62ch;line-height:1.7;font-size:16px}
+p+p{margin-top:15px}
+.cap{font-size:14px;color:var(--muted);line-height:1.65}
+.bino{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--oxblood)}
+.anno{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--muted)}
+strong{font-weight:600;color:var(--ink)}
 
-/* ---------- HERO ---------- */
-.hero{background:var(--ink);color:var(--stock);border-bottom:none}
-.hero .punch{background:rgba(0,0,0,.22);border-right-color:rgba(236,238,239,.14)}
-.hero .punch i{border-color:rgba(236,238,239,.14);background:var(--ink)}
-.hero h1{max-width:15ch}
-.hero .bled{color:rgba(236,238,239,.06);opacity:1}
-.wordmark{display:inline-block;margin-bottom:44px}
-.wordmark .w{font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:34px;line-height:1;display:block}
-.wordmark .r{display:block;height:3px;background:var(--stamp);margin-top:7px}
-.wordmark .d{display:block;font-family:var(--mono);font-size:11px;color:rgba(236,238,239,.62);margin-top:8px;letter-spacing:0}
-.sub{margin-top:32px;font-size:18px;color:var(--rule);max-width:62ch}
-.lede-strong{margin-top:20px;font-weight:600;color:var(--stock)}
-.fields{margin-top:52px;border-top:1px solid rgba(236,238,239,.14);max-width:820px}
-.frow{display:flex;justify-content:space-between;gap:20px;padding:14px 0;border-bottom:1px solid rgba(236,238,239,.14);font-family:var(--mono);font-size:11px;text-transform:uppercase}
-.frow .k{color:rgba(236,238,239,.62)}
-.frow .v{color:var(--stock);text-align:right}
+/* ---------- WORDMARK LOCKUP ---------- */
+.mark{display:inline-block;margin-bottom:40px}
+.mark .w{font-family:var(--ui);font-weight:500;text-transform:uppercase;
+  letter-spacing:.42em;font-size:clamp(20px,2.6vw,30px);line-height:1;
+  color:var(--ink);display:block}
+.mark .r{display:block;height:1px;background:var(--ink);margin-top:10px}
+.mark .b{display:block;margin-top:9px;font-size:13px}
+
+/* ---------- FIELD TABLE ---------- */
+.ft{margin-top:44px;border-top:1px solid var(--rule);max-width:760px}
+.ft-r{display:flex;justify-content:space-between;gap:24px;padding:12px 0;
+  border-bottom:1px solid var(--rule-2);font-family:var(--mono);font-size:11px;
+  letter-spacing:.14em;text-transform:uppercase}
+.ft-r .k{color:var(--muted)}
+.ft-r .v{color:var(--ink);text-align:right}
+.ft-r .v.ox{color:var(--oxblood)}
+
+/* ---------- PLATE ---------- */
+.plate{background:var(--plate);border:1px solid var(--rule);padding:26px 24px 22px;position:relative}
+.plate-n{font-family:var(--mono);font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.plate-fig{background:var(--tint);border:1px solid var(--rule-2);padding:18px}
+.plate-cap{margin-top:18px;text-align:center;font-size:15px}
+.plate-cap .anno{display:block;margin-top:5px;font-size:13.5px}
+
+/* ---------- CHIPS ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{border:1px solid var(--chip);padding:6px 11px;font-family:var(--mono);
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.chip.ox{border-color:var(--oxblood);color:var(--oxblood)}
 
 /* ---------- GRIDS ---------- */
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gutter)}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gutter)}
-@media(max-width:1000px){.g4,.g3{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:680px){.g4,.g3{grid-template-columns:1fr}}
-.card{background:var(--sheet);border:1px solid var(--rule);padding:28px 24px}
-.card .num{font-family:var(--mono);font-size:11px;color:var(--graphite);margin-bottom:14px}
-.card h3{margin-bottom:12px;font-size:16px}
-.card p{font-size:15px;color:var(--graphite);line-height:1.65;max-width:none}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);
+  border:1px solid var(--rule);margin-top:44px}
+.g3>div{background:var(--plate);padding:28px 24px}
+@media(max-width:900px){.g3{grid-template-columns:1fr}}
+.cell-n{font-family:var(--mono);font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--oxblood);margin-bottom:16px}
+.cell h3{margin-bottom:11px}
+.cell p{font-size:15px;color:var(--body);max-width:none}
+.cell .anno{display:block;margin-top:14px;font-size:13.5px}
 
+/* ---------- TREE ---------- */
+.tree{margin-top:44px;border:1px solid var(--rule);background:var(--plate-2);padding:clamp(20px,3vw,36px)}
+.tree-foot{margin-top:18px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted)}
 
-/* ---------- LADDER RAIL ---------- */
-.railtl{position:relative;margin-top:46px;padding-top:46px}
-.railtl::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:var(--rule)}
-.now{position:absolute;left:0;top:-8px;bottom:0;width:3px;background:var(--stamp);z-index:2}
-.now span{position:absolute;top:-26px;left:0;white-space:nowrap;font-family:var(--mono);font-size:11px;color:var(--stamp);font-weight:600}
-.rungs{display:grid;grid-template-columns:repeat(5,1fr);gap:var(--gutter)}
-@media(max-width:1040px){.rungs{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:620px){.rungs{grid-template-columns:1fr}}
+/* ---------- CONTACT ---------- */
+.mail{display:inline-block;margin-top:34px;font-family:var(--mono);
+  font-size:clamp(14px,2vw,20px);letter-spacing:.08em;color:var(--ink);
+  border-bottom:1px solid var(--oxblood);padding-bottom:5px;transition:color .12s}
+.mail:hover{color:var(--oxblood)}
 
-/* ---------- CONTACT + FOOTER ---------- */
-.mail{display:inline-block;margin-top:38px;font-family:var(--mono);font-size:clamp(15px,2.4vw,22px);color:var(--ink);border-bottom:3px solid var(--stamp);padding-bottom:5px}
-footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono);font-size:11px;text-transform:uppercase}
-.foot{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;padding-top:26px;padding-bottom:26px}
-.foot b{color:var(--stock);font-weight:400}
+/* ---------- FOOTER ---------- */
+footer{background:var(--museum);color:rgba(248,245,236,.58);
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.foot{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:space-between;
+  padding-top:24px;padding-bottom:24px}
+.foot b{color:var(--plate);font-weight:400}
+
+@media(prefers-reduced-motion:reduce){*{transition:none !important;animation:none !important}}
 </style>
 </head>
 <body>
 
 <div class="rail">
-  <div class="rail-mark">NONLIMI</div>
-  <div class="rail-fields">
-    <div class="rail-f">SITE</div>
-    <div class="rail-f"><b>NONLIMI.COM</b></div>
-    <div class="rail-f">REV B</div>
-    <div class="rail-f">2026&ndash;07&ndash;31</div>
-  </div>
-  <nav class="rail-nav">
-    <a href="#problem">01 PROBLEM</a>
-    <a href="#what">02 WHAT WE DO</a>
-    <a href="#next">03 WHERE IT GOES</a>
-    <a href="#contact">04 CONTACT</a>
+  <div class="rail-m">NONLIMI</div>
+  <div class="rail-f">SITE</div>
+  <div class="rail-f"><b>NONLIMI.COM</b></div>
+  <div class="rail-f">REV C</div>
+  <div class="rail-f">2026&ndash;07&ndash;31</div>
+  <nav class="rail-n">
+    <a href="#problem">I &middot; THE PROBLEM</a>
+    <a href="#plates">II &middot; THE PLATES</a>
+    <a href="#tree">III &middot; THE TREE</a>
+    <a href="#contact">IV &middot; CORRESPONDENCE</a>
   </nav>
 </div>
 
 <!-- ============ HERO ============ -->
-<section class="hero sheet" id="top">
-  <div class="punch"><i></i><i></i><i></i></div>
-  <div class="bled">00</div>
-  <div class="field pad z wrap">
+<section class="pad" id="top">
+  <div class="field wrap">
 
-    <div class="wordmark">
+    <div class="mark">
       <span class="w">NONLIMI</span>
       <span class="r"></span>
-      <span class="d">DYNAMICS S.L. &middot; MADRID</span>
+      <span class="b bino">Dynamica non limitata</span>
     </div>
 
-    <h1>The validation layer for physical AI.</h1>
+    <h1>A new form of life, documented before release.</h1>
 
-    <p class="sub">
-      We build the layer that turns simulation into release evidence: a machine-checkable
-      verdict on whether a change to an autonomous system is fit to ship.
+    <p style="margin-top:26px;max-width:60ch">
+      Nonlimi is the validation layer for physical AI. We turn simulation into release
+      evidence: a machine-checkable verdict on whether a change to an autonomous system
+      is fit to ship.
     </p>
-    <p class="sub lede-strong">A result you can reproduce, hand over, and be held to.</p>
+    <p style="max-width:60ch"><strong>A result you can reproduce, hand over, and be held to.</strong></p>
 
-    <div class="fields">
-      <div class="frow"><span class="k">FOCUS</span><span class="v">AUTONOMY VALIDATION &middot; PHYSICAL AI</span></div>
-      <div class="frow"><span class="k">METHOD</span><span class="v">DETERMINISTIC VERDICTS &middot; EVIDENCE OVER ADJECTIVES</span></div>
-      <div class="frow"><span class="k">LICENCE</span><span class="v">APACHE&ndash;2.0 CORE &middot; SOURCE TO PARTNERS AS THE PROGRAM OPENS</span></div>
-      <div class="frow"><span class="k">ENTITY</span><span class="v">NONLIMI DYNAMICS S.L. &middot; MADRID, ES</span></div>
+    <!-- PLATE I — the specimen is the verdict, not the machine -->
+    <div class="plate" style="margin-top:52px;max-width:860px">
+      <div class="plate-n">PLATE I &middot; THE VERDICT</div>
+      <div class="plate-fig">
+        <svg viewBox="0 0 860 300" role="img" aria-label="Engraving of a verdict record with numbered callouts">
+          <g fill="none" stroke="#1C1A14" stroke-width="1">
+            <!-- record card -->
+            <rect x="286" y="40" width="288" height="220"/>
+            <line x1="286" y1="76" x2="574" y2="76"/>
+            <!-- ruled lines -->
+            <line x1="308" y1="106" x2="500" y2="106" stroke="#8D8672"/>
+            <line x1="308" y1="130" x2="530" y2="130" stroke="#8D8672"/>
+            <line x1="308" y1="154" x2="470" y2="154" stroke="#8D8672"/>
+            <line x1="308" y1="196" x2="552" y2="196" stroke="#D3CCB8"/>
+            <!-- callout leaders -->
+            <line x1="286" y1="76" x2="205" y2="76"/>
+            <line x1="308" y1="154" x2="150" y2="196"/>
+            <line x1="574" y1="222" x2="712" y2="222"/>
+          </g>
+          <!-- fail mark, the one oxblood element -->
+          <g stroke="#6E2B24" stroke-width="1.6">
+            <line x1="524" y1="212" x2="548" y2="236"/>
+            <line x1="548" y1="212" x2="524" y2="236"/>
+          </g>
+          <g font-family="'Martian Mono',monospace" font-size="9.5" letter-spacing="1.6" fill="#8D8672">
+            <text x="14"  y="72">1 &middot; BASELINE REFERENCE</text>
+            <text x="14"  y="192">2 &middot; REASON CODE</text>
+            <text x="720" y="218">3 &middot; EXIT STATUS</text>
+            <text x="308" y="66" fill="#1C1A14">RUN RECORD</text>
+            <text x="308" y="226" fill="#6E2B24">VERDICT &mdash; FAIL</text>
+          </g>
+        </svg>
+      </div>
+      <div class="plate-cap">
+        <span class="bino">Verdictum reproducibile</span>
+        <span class="anno">&mdash; the same input, the same answer, on the same machine</span>
+      </div>
+    </div>
+
+    <!-- FIELD TABLE -->
+    <div class="ft">
+      <div class="ft-r"><span class="k">SUBJECT</span><span class="v">AUTONOMOUS SYSTEMS UNDER CHANGE</span></div>
+      <div class="ft-r"><span class="k">METHOD</span><span class="v">DETERMINISTIC SIMULATION &middot; RECORDED BASELINE</span></div>
+      <div class="ft-r"><span class="k">OUTPUT</span><span class="v">REASON-CODED PASS / FAIL VERDICT</span></div>
+      <div class="ft-r"><span class="k">NATURAL PREDATOR</span><span class="v ox">THE REGRESSION NOBODY CAUGHT</span></div>
+      <div class="ft-r"><span class="k">LICENCE</span><span class="v">APACHE&ndash;2.0 CORE &middot; SOURCE TO PARTNERS AS THE PROGRAM OPENS</span></div>
     </div>
 
   </div>
 </section>
 
-<!-- ============ 01 THE PROBLEM ============ -->
-<section class="sheet" id="problem">
-  <div class="punch"><i></i><i></i><i></i></div>
-  <div class="bled">01</div>
-  <div class="field pad z wrap">
-    <div class="lbl">01 &mdash; THE PROBLEM</div>
+<!-- ============ I — THE PROBLEM ============ -->
+<section class="pad alt" id="problem">
+  <div class="field wrap">
+    <div class="lbl">I &middot; THE PROBLEM</div>
     <h2>Physical AI has no release process.</h2>
-    <p style="margin-top:24px">
+    <p style="margin-top:26px">
       Software solved this twenty years ago. Write a test, gate the merge, ship on green.
       The evidence is produced by the pipeline, it is the same every time, and nobody has
       to be in the room for it to count.
@@ -183,103 +243,136 @@ footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono)
     <p>
       Autonomous systems still ship on judgement. A demo that went well. A field trial that
       did not crash. A simulation job that someone re-ran until it passed. Each of those is
-      an impression of safety, and none of them survives being asked to prove it — to a
+      an impression of safety, and none of them survives being asked to prove it &mdash; to a
       customer, to an insurer, or to yourself at three in the morning after an incident.
     </p>
     <p>
       That does not scale with fleet size, and it does not transfer between teams. It is
-      the bottleneck between a robot that works and a robot you can ship.
+      the bottleneck between a machine that works and a machine you can ship.
     </p>
   </div>
 </section>
 
-<!-- ============ 02 WHAT WE DO ============ -->
-<section class="sheet" id="what">
-  <div class="punch"><i></i><i></i><i></i></div>
-  <div class="bled">02</div>
-  <div class="field pad z wrap">
-    <div class="lbl">02 &mdash; WHAT WE DO</div>
+<!-- ============ II — THE PLATES ============ -->
+<section class="pad" id="plates">
+  <div class="field wrap">
+    <div class="lbl">II &middot; THE PLATES &mdash; <b>WHAT WE DO</b></div>
     <h2>We make simulation produce evidence, not impressions.</h2>
-    <div class="g3" style="margin-top:44px">
-      <div class="card">
-        <div class="num">01</div>
+
+    <div class="g3">
+      <div class="cell">
+        <div class="cell-n">PLATE II</div>
         <h3>Deterministic verdicts</h3>
-        <p>Same seed, same architecture, same answer. A result you cannot reproduce is not evidence — it is an anecdote with a chart attached.</p>
+        <p>Same seed, same architecture, same answer. A result you cannot reproduce is not evidence &mdash; it is an anecdote with a chart attached.</p>
+        <span class="anno">&mdash; measured on same-architecture runs</span>
       </div>
-      <div class="card">
-        <div class="num">02</div>
+      <div class="cell">
+        <div class="cell-n">PLATE III</div>
         <h3>Reason codes, not red</h3>
         <p>A failure names what moved against a recorded baseline. &ldquo;The build is broken&rdquo; is not a finding. &ldquo;Minimum clearance fell below baseline&rdquo; is.</p>
+        <span class="anno">&mdash; the diagnosis, not the alarm</span>
       </div>
-      <div class="card">
-        <div class="num">03</div>
+      <div class="cell">
+        <div class="cell-n">PLATE IV</div>
         <h3>Evidence that travels</h3>
-        <p>Verdicts, reason codes and the runs behind them are artifacts you can hand to someone else. Designed to support the safety case you have to make — never a claim to have made it for you.</p>
+        <p>Verdicts, reason codes and the runs behind them are artifacts you can hand to someone else. Designed to support the safety case you have to make &mdash; never a claim to have made it for you.</p>
+        <span class="anno">&mdash; a record, not a reassurance</span>
+      </div>
+    </div>
+
+    <div class="chips">
+      <div class="chip">PLATE</div>
+      <div class="chip">FIELD NOTE</div>
+      <div class="chip">RUN RECORD</div>
+      <div class="chip ox">REV C &middot; CURRENT</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ III — THE TREE ============ -->
+<section class="pad alt" id="tree">
+  <div class="field wrap">
+    <div class="lbl">III &middot; THE TREE &mdash; <b>LABELLED AS NEXT, NOT AS NOW</b></div>
+    <h2>One engine. Everything else descends from it.</h2>
+    <p style="margin-top:26px">
+      Everything above the line is direction, not availability. What ships today we publish
+      in full to the teams we work with, item by item, including what is not in hand &mdash; we
+      do not summarise it here, because a summary of a build state is how a build state
+      starts drifting.
+    </p>
+
+    <div class="tree">
+      <svg viewBox="0 0 1180 262" role="img" aria-label="Evolutionary tree of planned descendants from today's engine">
+          <g fill="none" stroke="#D3CCB8" stroke-width="1">
+            <line x1="40" y1="220" x2="1140" y2="220"/>
+          </g>
+          <g fill="none" stroke="#1C1A14" stroke-width="1.2">
+            <line x1="120" y1="220" x2="120" y2="110"/>
+            <line x1="120" y1="110" x2="1040" y2="110"/>
+            <line x1="288" y1="110" x2="288" y2="64"/>
+            <line x1="476" y1="110" x2="476" y2="64"/>
+            <line x1="664" y1="110" x2="664" y2="64"/>
+            <line x1="852" y1="110" x2="852" y2="64"/>
+            <line x1="1040" y1="110" x2="1040" y2="64"/>
+          </g>
+          <g stroke="#6E2B24" stroke-width="2"><line x1="120" y1="236" x2="120" y2="206"/></g>
+          <g font-family="'Martian Mono',monospace" font-size="10" letter-spacing="2" fill="#6E2B24">
+            <text x="108" y="254">TODAY</text>
+          </g>
+          <g font-family="'Martian Mono',monospace" font-size="9.5" letter-spacing="1.4" fill="#8D8672">
+            <text x="242" y="52">NONLIMI CLOUD</text>
+            <text x="430" y="52">EVIDENCE</text>
+            <text x="608" y="52">INCIDENT REPLAY</text>
+            <text x="800" y="52">NONLIMI MARKET</text>
+            <text x="984" y="52">SOVEREIGNTY</text>
+          </g>
+          <g font-family="'Martian Mono',monospace" font-size="9.5" letter-spacing="1.4" fill="#1C1A14">
+            <text x="138" y="150">THE ENGINE</text>
+          </g>
+        </svg>
+      <div class="tree-foot">// NO DATES. COMMITMENTS WE CANNOT GOVERN DO NOT GO IN PRINT.</div>
+    </div>
+
+    <div class="g3" style="margin-top:1px">
+      <div class="cell">
+        <div class="cell-n">DESCENDANT I</div>
+        <h3>Nonlimi Cloud</h3>
+        <p>Parallel execution, scenario generation, CI-native team workflow.</p>
+      </div>
+      <div class="cell">
+        <div class="cell-n">DESCENDANT II</div>
+        <h3>Evidence</h3>
+        <p>Published run series with N stated. A reason-code taxonomy broad enough to describe what actually goes wrong.</p>
+      </div>
+      <div class="cell">
+        <div class="cell-n">DESCENDANT III</div>
+        <h3>Incident replay</h3>
+        <p>Becomes a product job only when the sim-to-real evidence supports it &mdash; not before.</p>
+      </div>
+      <div class="cell">
+        <div class="cell-n">DESCENDANT IV</div>
+        <h3>Nonlimi Market</h3>
+        <p>A shared scenario and asset exchange.</p>
+      </div>
+      <div class="cell">
+        <div class="cell-n">DESCENDANT V</div>
+        <h3>Sovereignty</h3>
+        <p>A deployment option under no non-EU corporate control.</p>
+      </div>
+      <div class="cell" style="background:var(--tint)">
+        <div class="cell-n">&nbsp;</div>
+        <p class="anno" style="font-size:14.5px">Each descendant is earned by the one before it. None of them is available today.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 03 WHERE IT GOES ============ -->
-<section class="sheet" id="next">
-  <div class="punch"><i></i><i></i><i></i></div>
-  <div class="bled">03</div>
-  <div class="field pad z wrap">
-    <div class="lbl">03 &mdash; WHERE IT GOES &middot; LABELLED AS NEXT, NOT AS NOW</div>
-    <h2>One engine, four things built on top of it.</h2>
-    <p style="margin-top:24px">
-      Everything to the right of the line is direction, not availability. What ships today
-      we publish in full to the teams we work with, item by item, including what is not in
-      hand — we do not summarise it here, because a summary of a build state is how a build
-      state starts drifting.
-    </p>
-
-    <div class="railtl">
-      <div class="now"><span>TODAY &rarr;</span></div>
-      <div class="rungs">
-        <div class="card">
-          <div class="num">01</div>
-          <h3>Nonlimi Cloud</h3>
-          <p>Parallel execution, scenario generation, CI-native team workflow.</p>
-        </div>
-        <div class="card">
-          <div class="num">02</div>
-          <h3>Evidence</h3>
-          <p>Published run series with N stated. A reason-code taxonomy broad enough to describe what actually goes wrong.</p>
-        </div>
-        <div class="card">
-          <div class="num">03</div>
-          <h3>Incident replay</h3>
-          <p>Becomes a product job only when the sim-to-real evidence supports it — not before.</p>
-        </div>
-        <div class="card">
-          <div class="num">04</div>
-          <h3>Nonlimi Market</h3>
-          <p>A shared scenario and asset exchange.</p>
-        </div>
-        <div class="card">
-          <div class="num">05</div>
-          <h3>Sovereignty</h3>
-          <p>A deployment option under no non-EU corporate control.</p>
-        </div>
-      </div>
-    </div>
-
-    <p class="cap" style="margin-top:30px">
-      No dates. Commitments we cannot govern do not go in print.
-    </p>
-  </div>
-</section>
-
-
-<!-- ============ 05 CONTACT ============ -->
-<section class="sheet" id="contact">
-  <div class="punch"><i></i><i></i><i></i></div>
-  <div class="bled">04</div>
-  <div class="field pad z wrap">
-    <div class="lbl">04 &mdash; CONTACT</div>
+<!-- ============ IV — CORRESPONDENCE ============ -->
+<section class="pad" id="contact">
+  <div class="field wrap">
+    <div class="lbl">IV &middot; CORRESPONDENCE</div>
     <h2>If release confidence is your bottleneck, we would like to hear about it.</h2>
-    <p style="margin-top:24px">
+    <p style="margin-top:26px">
       We work with a small number of teams at a time, closely, and we would rather tell you
       early that it is not a fit than find out slowly together.
     </p>
@@ -287,11 +380,11 @@ footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono)
   </div>
 </section>
 
-<footer class="sheet">
+<footer>
   <div class="field foot wrap">
     <span>NONLIMI DYNAMICS S.L. &middot; <b>MADRID, ES</b></span>
     <span>PREPARED BY <b>S.P.</b></span>
-    <span>REV <b>B</b> &middot; 2026&ndash;07&ndash;31</span>
+    <span>REV <b>C</b> &middot; 2026&ndash;07&ndash;31</span>
     <span>&copy; 2026 NONLIMI DYNAMICS S.L.</span>
   </div>
 </footer>
