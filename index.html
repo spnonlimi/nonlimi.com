@@ -140,32 +140,95 @@ footer{background:var(--museum);color:rgba(248,245,236,.72);
   padding-top:24px;padding-bottom:24px}
 .foot b{color:var(--plate);font-weight:400}
 
-/* ---------- MOTION — minimal and archival ----------
-   Permitted by the brief: draw-on of callout lines on scroll, colour-shift
-   hover. No parallax, bounce, particles, glow, typing, or hover scaling.
-   Applied by script, so nothing is hidden when JS is off.            */
-.rise{opacity:0;transform:translateY(7px);will-change:opacity,transform;
-  transition:opacity .52s cubic-bezier(.16,1,.3,1),transform .52s cubic-bezier(.16,1,.3,1)}
-.rise.in{opacity:1;transform:none}
-.mark .r{transform:scaleX(0);transform-origin:left;
-  transition:transform .7s cubic-bezier(.16,1,.3,1) .1s}
-.mark.in .r{transform:scaleX(1)}
-svg .drw{stroke-dasharray:1600;stroke-dashoffset:1600;
-  transition:stroke-dashoffset 1s cubic-bezier(.16,1,.3,1)}
-svg.in .drw{stroke-dashoffset:0}
-.chip{transition:color .16s,border-color .16s}
+/* ---------- MOTION — drawn, then stamped ----------
+   Grammar: continuous things (rules, engravings, branches) DRAW ON;
+   records (numerals, verdicts, ledger rows, labels) are STAMPED in a
+   single frame via steps(1,end). Only TODAY blinks, forever.
+   All hidden initial states live under html.motion, which only the
+   script adds — with JS off the page renders complete.            */
+@keyframes nlDraw{to{stroke-dashoffset:0}}
+@keyframes nlStamp{from{opacity:0}to{opacity:1}}
+@keyframes nlBlink{0%,49%{opacity:1}50%,100%{opacity:.25}}
+
+html.motion .rise{opacity:0;transform:translateY(4px)}
+html.motion .rise.in{opacity:1;transform:none;
+  transition:opacity .5s cubic-bezier(.33,1,.68,1),transform .5s cubic-bezier(.33,1,.68,1)}
+
+/* field table — a ledger is filled, not faded */
+html.motion .ft:not(.go) .ft-r{opacity:0}
+html.motion .ft.go .ft-r{animation:nlStamp 1ms steps(1,end) both}
+html.motion .ft.go .ft-r:nth-child(1){animation-delay:.06s}
+html.motion .ft.go .ft-r:nth-child(2){animation-delay:.15s}
+html.motion .ft.go .ft-r:nth-child(3){animation-delay:.24s}
+html.motion .ft.go .ft-r:nth-child(4){animation-delay:.33s}
+html.motion .ft.go .ft-r:nth-child(5){animation-delay:.42s}
+
+/* PLATE I — accession order: card, leaders, numerals, then judgment */
+html.motion .psvg .dcard{stroke-dasharray:1400;stroke-dashoffset:1400}
+html.motion .psvg .lead{stroke-dasharray:260;stroke-dashoffset:260}
+html.motion .psvg .stp{opacity:0}
+html.motion .psvg.go .dcard{animation:nlDraw 1s linear both}
+html.motion .psvg.go .lead.l1{animation:nlDraw .3s linear .7s both}
+html.motion .psvg.go .lead.l2{animation:nlDraw .3s linear 1s both}
+html.motion .psvg.go .lead.l3{animation:nlDraw .3s linear 1.3s both}
+html.motion .psvg.go .stp.rr{animation:nlStamp 1ms steps(1,end) .55s both}
+html.motion .psvg.go .stp.n1{animation:nlStamp 1ms steps(1,end) 1.05s both}
+html.motion .psvg.go .stp.n2{animation:nlStamp 1ms steps(1,end) 1.35s both}
+html.motion .psvg.go .stp.n3{animation:nlStamp 1ms steps(1,end) 1.65s both}
+html.motion .psvg.go .stp.vx{animation:nlStamp 1ms steps(1,end) 1.85s both}
+
+/* THE TREE — trunk, branches, labels stamped, NO DATES last;
+   then TODAY begins to blink: the record is closed, the present is live */
+html.motion .tree .tk{stroke-dasharray:1100;stroke-dashoffset:1100}
+html.motion .tree .br{stroke-dasharray:60;stroke-dashoffset:60}
+html.motion .tree .stp{opacity:0}
+html.motion .tree:not(.go) .tree-foot{opacity:0}
+html.motion .tree.go .tk{animation:nlDraw .9s linear both}
+html.motion .tree.go .br.b1{animation:nlDraw .35s linear .75s both}
+html.motion .tree.go .br.b2{animation:nlDraw .35s linear .87s both}
+html.motion .tree.go .br.b3{animation:nlDraw .35s linear .99s both}
+html.motion .tree.go .br.b4{animation:nlDraw .35s linear 1.11s both}
+html.motion .tree.go .br.b5{animation:nlDraw .35s linear 1.23s both}
+html.motion .tree.go .stp.eng{animation:nlStamp 1ms steps(1,end) .95s both}
+html.motion .tree.go .stp.tl1{animation:nlStamp 1ms steps(1,end) 1.15s both}
+html.motion .tree.go .stp.tl2{animation:nlStamp 1ms steps(1,end) 1.27s both}
+html.motion .tree.go .stp.tl3{animation:nlStamp 1ms steps(1,end) 1.39s both}
+html.motion .tree.go .stp.tl4{animation:nlStamp 1ms steps(1,end) 1.51s both}
+html.motion .tree.go .stp.tl5{animation:nlStamp 1ms steps(1,end) 1.63s both}
+html.motion .tree.go .stp.tdy{animation:nlStamp 1ms steps(1,end) .2s both}
+html.motion .tree.go .tree-foot{animation:nlStamp 1ms steps(1,end) 1.95s both}
+.tree.go .blinker{animation:nlBlink 2.2s steps(1,end) 2.4s infinite}
+
+/* wordmark rule draws; binomial settles after it */
+html.motion .mark .r{transform:scaleX(0);transform-origin:left}
+html.motion .mark.in .r{transform:scaleX(1);transition:transform .6s cubic-bezier(.2,0,0,1) .1s}
+html.motion .mark .b{opacity:0}
+html.motion .mark.in .b{opacity:1;transition:opacity .4s cubic-bezier(.33,1,.68,1) .7s}
+
+.chip{transition:color .15s,border-color .15s}
 .chip:hover{color:var(--oxblood);border-color:var(--oxblood)}
-.ft-r{transition:background .16s}
+.ft-r{transition:background .15s}
 .ft-r:hover{background:var(--tint)}
-.plate{transition:border-color .2s}
-.plate:hover{border-color:var(--chip)}
+
+/* settle: sequences force-complete after their planned duration via hard
+   properties — hidden tabs suspend animation timelines, so the final state
+   must not depend on one. TODAY's blink is exempt: the present stays live. */
+html.motion .psvg.settle .dcard,html.motion .psvg.settle .lead,
+html.motion .tree.settle .tk,html.motion .tree.settle .br{
+  animation:none !important;stroke-dashoffset:0 !important}
+html.motion .psvg.settle .stp,html.motion .tree.settle .stp:not(.tdy),
+html.motion .tree.settle .tree-foot,html.motion .ft.settle .ft-r{
+  animation:none !important;opacity:1 !important}
 
 @media(prefers-reduced-motion:reduce){
-  .rise,.rise.in{opacity:1 !important;transform:none !important}
-  .mark .r{transform:scaleX(1) !important}
-  svg .drw{stroke-dashoffset:0 !important}
-  *{transition:none !important;animation:none !important}
+  html.motion *{animation:none !important;transition:none !important}
+  html.motion .rise,html.motion .ft-r,html.motion .stp,html.motion .mark .b,
+  html.motion .tree-foot{opacity:1 !important;transform:none !important}
+  html.motion .dcard,html.motion .lead,html.motion .tk,html.motion .br{stroke-dashoffset:0 !important}
+  html.motion .mark .r{transform:scaleX(1) !important}
+  .blinker{animation:none !important;opacity:1 !important}
 }
+
 </style>
 </head>
 <body>
@@ -207,32 +270,30 @@ svg.in .drw{stroke-dashoffset:0}
     <div class="plate" style="margin-top:52px;max-width:860px">
       <div class="plate-n">PLATE I &middot; THE VERDICT</div>
       <div class="plate-fig">
-        <svg viewBox="0 0 860 300" role="img" aria-label="Engraving of a verdict record with numbered callouts">
-          <g class="drw" fill="none" stroke="#1C1A14" stroke-width="1">
-            <!-- record card -->
+        <svg class="psvg" viewBox="0 0 860 300" role="img" aria-label="Engraving of a verdict record with numbered callouts">
+          <g class="dcard" fill="none" stroke="#1C1A14" stroke-width="1">
             <rect x="286" y="40" width="288" height="220"/>
             <line x1="286" y1="76" x2="574" y2="76"/>
-            <!-- ruled lines -->
             <line x1="308" y1="106" x2="500" y2="106" stroke="#8D8672"/>
             <line x1="308" y1="130" x2="530" y2="130" stroke="#8D8672"/>
             <line x1="308" y1="154" x2="470" y2="154" stroke="#8D8672"/>
             <line x1="308" y1="196" x2="552" y2="196" stroke="#D3CCB8"/>
-            <!-- callout leaders -->
-            <line x1="286" y1="76" x2="205" y2="76"/>
-            <line x1="308" y1="154" x2="150" y2="196"/>
-            <line x1="574" y1="222" x2="712" y2="222"/>
           </g>
-          <!-- fail mark, the one oxblood element -->
-          <g class="drw" stroke="#6E2B24" stroke-width="1.6">
+          <g fill="none" stroke="#1C1A14" stroke-width="1">
+            <line class="lead l1" x1="286" y1="76" x2="205" y2="76"/>
+            <line class="lead l2" x1="308" y1="154" x2="150" y2="196"/>
+            <line class="lead l3" x1="574" y1="222" x2="712" y2="222"/>
+          </g>
+          <g class="stp vx" stroke="#6E2B24" stroke-width="1.6">
             <line x1="524" y1="212" x2="548" y2="236"/>
             <line x1="548" y1="212" x2="524" y2="236"/>
           </g>
           <g font-family="'Martian Mono',monospace" font-size="9.5" letter-spacing="1.6" fill="#8D8672">
-            <text x="14"  y="72">1 &middot; BASELINE REFERENCE</text>
-            <text x="14"  y="192">2 &middot; REASON CODE</text>
-            <text x="720" y="218">3 &middot; EXIT STATUS</text>
-            <text x="308" y="66" fill="#1C1A14">RUN RECORD</text>
-            <text x="308" y="226" fill="#6E2B24">VERDICT &mdash; FAIL</text>
+            <text class="stp n1" x="14"  y="72">1 &middot; BASELINE REFERENCE</text>
+            <text class="stp n2" x="14"  y="192">2 &middot; REASON CODE</text>
+            <text class="stp n3" x="720" y="218">3 &middot; EXIT STATUS</text>
+            <text class="stp rr" x="308" y="66" fill="#1C1A14">RUN RECORD</text>
+            <text class="stp vx" x="308" y="226" fill="#6E2B24">VERDICT &mdash; FAIL</text>
           </g>
         </svg>
       </div>
@@ -326,32 +387,34 @@ svg.in .drw{stroke-dashoffset:0}
     </p>
 
     <div class="tree">
-      <svg viewBox="0 0 1180 262" role="img" aria-label="Evolutionary tree of planned descendants from today's engine">
+      <svg class="tsvg" viewBox="0 0 1180 262" role="img" aria-label="Evolutionary tree of planned descendants from today's engine">
           <g fill="none" stroke="#D3CCB8" stroke-width="1">
             <line x1="40" y1="220" x2="1140" y2="220"/>
           </g>
-          <g class="drw" fill="none" stroke="#1C1A14" stroke-width="1.2">
+          <g class="tk" fill="none" stroke="#1C1A14" stroke-width="1.2">
             <line x1="120" y1="220" x2="120" y2="110"/>
             <line x1="120" y1="110" x2="1040" y2="110"/>
-            <line x1="288" y1="110" x2="288" y2="64"/>
-            <line x1="476" y1="110" x2="476" y2="64"/>
-            <line x1="664" y1="110" x2="664" y2="64"/>
-            <line x1="852" y1="110" x2="852" y2="64"/>
-            <line x1="1040" y1="110" x2="1040" y2="64"/>
           </g>
-          <g class="drw" stroke="#6E2B24" stroke-width="2"><line x1="120" y1="236" x2="120" y2="206"/></g>
-          <g font-family="'Martian Mono',monospace" font-size="10" letter-spacing="2" fill="#6E2B24">
+          <g fill="none" stroke="#1C1A14" stroke-width="1.2">
+            <line class="br b1" x1="288" y1="110" x2="288" y2="64"/>
+            <line class="br b2" x1="476" y1="110" x2="476" y2="64"/>
+            <line class="br b3" x1="664" y1="110" x2="664" y2="64"/>
+            <line class="br b4" x1="852" y1="110" x2="852" y2="64"/>
+            <line class="br b5" x1="1040" y1="110" x2="1040" y2="64"/>
+          </g>
+          <g class="stp tdy"><g class="blinker" stroke="#6E2B24" stroke-width="2"><line x1="120" y1="236" x2="120" y2="206"/></g></g>
+          <g class="stp tdy"><g class="blinker" font-family="'Martian Mono',monospace" font-size="10" letter-spacing="2" fill="#6E2B24">
             <text x="108" y="254">TODAY</text>
-          </g>
+          </g></g>
           <g font-family="'Martian Mono',monospace" font-size="9.5" letter-spacing="1.4" fill="#8D8672">
-            <text x="242" y="52">NONLIMI CLOUD</text>
-            <text x="430" y="52">EVIDENCE</text>
-            <text x="608" y="52">INCIDENT REPLAY</text>
-            <text x="800" y="52">NONLIMI MARKET</text>
-            <text x="984" y="52">SOVEREIGNTY</text>
+            <text class="stp tl1" x="242" y="52">NONLIMI CLOUD</text>
+            <text class="stp tl2" x="430" y="52">EVIDENCE</text>
+            <text class="stp tl3" x="608" y="52">INCIDENT REPLAY</text>
+            <text class="stp tl4" x="800" y="52">NONLIMI MARKET</text>
+            <text class="stp tl5" x="984" y="52">SOVEREIGNTY</text>
           </g>
           <g font-family="'Martian Mono',monospace" font-size="9.5" letter-spacing="1.4" fill="#1C1A14">
-            <text x="138" y="150">THE ENGINE</text>
+            <text class="stp eng" x="138" y="150">THE ENGINE</text>
           </g>
         </svg>
       <div class="tree-foot">// NO DATES. COMMITMENTS WE CANNOT GOVERN DO NOT GO IN PRINT.</div>
@@ -410,58 +473,51 @@ svg.in .drw{stroke-dashoffset:0}
 
 <script>
 (function () {
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('motion');
 
-  var sel = 'section .lbl, section h1, section h2, section p, .mark, .plate,'
-          + ' .ft-r, .g3 > div, .tree, .chips, .mail, .tree-foot';
-  var nodes = Array.prototype.slice.call(document.querySelectorAll(sel));
+  var riseSel = 'section .lbl, section h1, section h2, section p, .plate, .chips, .mail';
+  var rises = Array.prototype.slice.call(document.querySelectorAll(riseSel));
+  rises.forEach(function (n) { n.classList.add('rise'); });
+  var mark = document.querySelector('.mark');
+  var seqs = Array.prototype.slice.call(document.querySelectorAll('.psvg, .ft, .tree'));
 
-  nodes.forEach(function (n) { n.classList.add('rise'); });
+  function inView(n){ var r=n.getBoundingClientRect(); return r.top < window.innerHeight && r.bottom > 0; }
+  function fire(n){
+    if (n === mark) { n.classList.add('in'); return; }
+    if (n.classList.contains('rise')) {
+      var sibs = Array.prototype.filter.call(n.parentNode.children, function (c) {
+        return c.classList && c.classList.contains('rise');
+      });
+      var i = Math.min(sibs.indexOf(n), 5);
+      n.style.transitionDelay = (i > 0 ? i * 55 : 0) + 'ms';
+      n.classList.add('in');
+    } else {
+      n.classList.add('go');
+      setTimeout(function () { n.classList.add('settle'); }, 2600);
+    }
+  }
 
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
       if (!e.isIntersecting) return;
-      var el = e.target;
-      var sibs = Array.prototype.slice.call(el.parentNode.children).filter(function (c) {
-        return c.classList && c.classList.contains('rise');
-      });
-      var i = Math.min(sibs.indexOf(el), 5);
-      el.style.transitionDelay = (i > 0 ? i * 55 : 0) + 'ms';
-      el.classList.add('in');
-      io.unobserve(el);
+      fire(e.target); io.unobserve(e.target);
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
 
-  nodes.forEach(function (n) { io.observe(n); });
+  var all = rises.concat(seqs); if (mark) all.push(mark);
+  all.forEach(function (n) { io.observe(n); });
 
-  // hairline draw-on for the plate callouts and the tree
-  var svgs = Array.prototype.slice.call(document.querySelectorAll('svg'));
-  var sio = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      e.target.classList.add('in');
-      sio.unobserve(e.target);
-    });
-  }, { threshold: 0.2 });
-  svgs.forEach(function (n) { sio.observe(n); });
-
-  // reveal anything already in view, immediately and with no delay
-  function revealNow(n) { n.style.transitionDelay = '0ms'; n.classList.add('in'); }
+  function revealNow(n){ n.style.transitionDelay='0ms'; fire(n); }
   requestAnimationFrame(function () {
-    nodes.concat(svgs).forEach(function (n) {
-      var r = n.getBoundingClientRect();
-      if (r.top < window.innerHeight) revealNow(n);
-    });
+    all.forEach(function (n) { if (inView(n)) revealNow(n); });
   });
-
-  // failsafe: whatever happens, nothing stays hidden
-  setTimeout(function () { nodes.concat(svgs).forEach(revealNow); }, 1600);
+  /* failsafe: sequences are STARTED, never left hidden — content is
+     visible or animating within 1.6s no matter what */
+  setTimeout(function () { all.forEach(revealNow); }, 1600);
   window.addEventListener('load', function () {
-    nodes.forEach(function (n) {
-      var r = n.getBoundingClientRect();
-      if (r.top < window.innerHeight) revealNow(n);
-    });
+    all.forEach(function (n) { if (inView(n)) revealNow(n); });
   });
 })();
 </script>
