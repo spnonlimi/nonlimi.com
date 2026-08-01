@@ -3,230 +3,273 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Studio</title>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
 <meta name="googlebot" content="noindex, nofollow" />
-<title>Studio</title>
+<meta name="description" content="Nonlimi is the validation layer for physical AI. We turn simulation into release evidence: a machine-checkable verdict on whether a change to an autonomous system is fit to ship. Nonlimi Dynamics S.L., Madrid." />
+<meta property="og:title" content="Nonlimi Dynamics — The Validation Layer for Physical AI" />
+<meta property="og:description" content="A new form of life, documented before release." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://nonlimi.com/" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Spectral:ital,wght@0,500;1,400&family=Martian+Mono:wght@400;500;600&family=Anton&family=Marcellus&family=Big+Shoulders+Display:wght@700;900&family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Saira+Stencil+One&family=Syncopate:wght@400;700&family=VT323&family=Michroma&display=swap" rel="stylesheet" />
 <style>
 /* ==========================================================
-   NONLIMI — STUDIO. Internal direction review.
-   One page, one set of claims, nine visual identities.
-   Every figure on the source boards was a placeholder and is
-   omitted here. Copy is the audited live copy, unchanged.
+   NONLIMI DYNAMICS S.L. — "THE NEW SPECIES" (direction 7a)
+   Pigment on plate: no pure white, no pure black.
+   Radius 0 everywhere. No shadows. Depth = hairlines + tints.
+   Spectral is CAGED: display headlines and italic captions only.
    ========================================================== */
 :root{
-  --bg:#F8F5EC; --bg2:#F4F1E8; --tint:#F1ECDD;
-  --rule:#D3CCB8; --rule2:#DDD6C2; --chipbd:#C6BFA9;
+  --plate:#F8F5EC; --plate-2:#F4F1E8; --tint:#F1ECDD;
+  --rule:#D3CCB8; --rule-2:#DDD6C2; --chip:#C6BFA9;
   --ink:#1C1A14; --body:#4A463A; --muted:#8D8672;
-  --inst:#1E3B32; --instrule:#2A4436; --accent:#6E2B24;
-  --display:'Spectral',Georgia,serif; --displayw:500; --displayls:-.005em;
-  --displaytr:none; --displaylh:1.14; --h1max:58px;
-  --ui:'Saira',system-ui,sans-serif; --uiw:400;
+  --museum:#1E3B32; --museum-rule:#2A4436;
+  --oxblood:#6E2B24;
+  --ui:'Saira',system-ui,sans-serif;
+  --serif:'Spectral',Georgia,serif;
   --mono:'Martian Mono',ui-monospace,monospace;
+  --displayw:500; --displaytr:none; --displayls:-.005em; --h1max:56px;
   --markf:'Saira',sans-serif; --markw:500; --markls:.42em;
-  --pad:clamp(18px,4vw,60px);
+  --pad:clamp(20px,4.5vw,64px);
 }
 *{box-sizing:border-box;margin:0;padding:0;border-radius:0}
-html{-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--ink);font-family:var(--ui);font-weight:var(--uiw);
-  font-size:16px;line-height:1.7;font-variant-numeric:tabular-nums;padding-bottom:92px;
-  transition:background .3s ease,color .3s ease}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  background:var(--plate); color:var(--ink); padding-bottom:96px;
+  font-family:var(--ui); font-weight:400;
+  font-size:16px; line-height:1.7;
+  font-variant-numeric:tabular-nums;
+}
 a{color:inherit;text-decoration:none}
 svg{display:block;max-width:100%}
 
-/* ---------- GATE ---------- */
+/* ---------- RECORD RAIL ---------- */
+.rail{position:sticky;top:0;z-index:50;background:var(--museum);color:#F2F0EA;
+  font-family:var(--mono);font-size:10px;font-weight:400;letter-spacing:.18em;
+  text-transform:uppercase;display:flex;align-items:stretch}
+.rail-m{padding:11px 18px;font-weight:500;letter-spacing:.30em;
+  border-right:1px solid var(--museum-rule);white-space:nowrap}
+.rail-f{padding:11px 18px;border-right:1px solid var(--museum-rule);
+  color:rgba(248,245,236,.72);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.rail-f b{color:var(--plate);font-weight:400}
+.rail-n{display:flex;margin-left:auto}
+.rail-n a{padding:11px 14px;color:rgba(248,245,236,.58);
+  border-left:1px solid var(--museum-rule);transition:color .12s}
+.rail-n a:hover{color:var(--oxblood);background:rgba(248,245,236,.04)}
+@media(max-width:1100px){.rail-n{display:none}.rail-f:nth-child(n+4){display:none}}
+
+/* ---------- SHEET ---------- */
+.field{padding-left:var(--pad);padding-right:var(--pad)}
+.wrap{max-width:1380px;margin:0 auto}
+section{border-bottom:1px solid var(--rule);position:relative}
+.pad{padding-top:clamp(56px,7vw,104px);padding-bottom:clamp(56px,7vw,104px)}
+.alt{background:var(--plate-2)}
+
+/* ---------- TYPE ---------- */
+.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:26px}
+.lbl b{color:var(--oxblood);font-weight:500}
+h1{font-family:var(--serif);font-weight:var(--displayw);font-size:clamp(30px,4.6vw,var(--h1max));
+  line-height:1.14;color:var(--ink);letter-spacing:var(--displayls);text-transform:var(--displaytr);max-width:17ch}
+h2{font-family:var(--serif);font-weight:var(--displayw);font-size:clamp(24px,3.2vw,38px);
+  line-height:1.18;color:var(--ink);letter-spacing:var(--displayls);text-transform:var(--displaytr);max-width:21ch}
+h3{font-family:var(--ui);font-weight:600;font-size:15px;line-height:1.35;
+  text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
+p{max-width:62ch;line-height:1.72;font-size:17px;color:var(--ink)}
+p+p{margin-top:15px}
+.cap{font-size:15px;color:var(--body);line-height:1.65}
+.bino{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--oxblood)}
+.anno{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--muted)}
+strong{font-weight:600;color:var(--ink)}
+
+/* ---------- WORDMARK LOCKUP ---------- */
+.mark{display:inline-block;margin-bottom:40px}
+.mark .w{font-family:var(--markf);font-weight:var(--markw);text-transform:uppercase;
+  letter-spacing:var(--markls);font-size:clamp(20px,2.6vw,30px);line-height:1;
+  color:var(--ink);display:block}
+.mark .r{display:block;height:1px;background:var(--ink);margin-top:10px}
+.mark .b{display:block;margin-top:9px;font-size:13px}
+
+/* ---------- FIELD TABLE ---------- */
+.ft{margin-top:44px;border-top:1px solid var(--rule);max-width:760px}
+.ft-r{display:flex;justify-content:space-between;gap:24px;padding:12px 0;
+  border-bottom:1px solid var(--rule-2);font-family:var(--mono);font-size:11px;
+  letter-spacing:.14em;text-transform:uppercase}
+.ft-r .k{color:var(--muted)}
+.ft-r .v{color:var(--ink);text-align:right}
+.ft-r .v.ox{color:var(--oxblood)}
+
+/* ---------- PLATE ---------- */
+.plate{background:var(--plate);border:1px solid var(--rule);padding:26px 24px 22px;position:relative}
+.plate-n{font-family:var(--mono);font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.plate-fig{background:var(--tint);border:1px solid var(--rule-2);padding:18px}
+.plate-cap{margin-top:18px;text-align:center;font-size:15px}
+.plate-cap .anno{display:block;margin-top:5px;font-size:14.5px;color:var(--body)}
+
+/* ---------- CHIPS ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{border:1px solid var(--chip);padding:6px 11px;font-family:var(--mono);
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.chip.ox{border-color:var(--oxblood);color:var(--oxblood)}
+
+/* ---------- GRIDS ---------- */
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);
+  border:1px solid var(--rule);margin-top:44px}
+.g3>div{background:var(--plate);padding:28px 24px}
+@media(max-width:900px){.g3{grid-template-columns:1fr}}
+.cell-n{font-family:var(--mono);font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--oxblood);margin-bottom:16px}
+.cell h3{margin-bottom:11px}
+.cell p{font-size:16px;color:var(--ink);max-width:none}
+.cell .anno{display:block;margin-top:14px;font-size:14.5px;color:var(--body)}
+
+/* ---------- TREE ---------- */
+.tree{margin-top:44px;border:1px solid var(--rule);background:var(--plate-2);padding:clamp(20px,3vw,36px)}
+.tree-foot{margin-top:18px;font-family:var(--mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--muted)}
+
+/* ---------- CONTACT ---------- */
+.mail{display:inline-block;margin-top:34px;font-family:var(--mono);
+  font-size:clamp(14px,2vw,20px);letter-spacing:.08em;color:var(--ink);
+  border-bottom:1px solid var(--oxblood);padding-bottom:5px;transition:color .12s}
+.mail:hover{color:var(--oxblood)}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--museum);color:rgba(242,240,234,.78);
+  font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
+.foot{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:space-between;
+  padding-top:24px;padding-bottom:24px}
+.foot b{color:var(--plate);font-weight:400}
+
+/* ---------- MOTION — minimal and archival ----------
+   Permitted by the brief: draw-on of callout lines on scroll, colour-shift
+   hover. No parallax, bounce, particles, glow, typing, or hover scaling.
+   Applied by script, so nothing is hidden when JS is off.            */
+.rise{opacity:0;transform:translateY(7px);will-change:opacity,transform;
+  transition:opacity .52s cubic-bezier(.16,1,.3,1),transform .52s cubic-bezier(.16,1,.3,1)}
+.rise.in{opacity:1;transform:none}
+.mark .r{transform:scaleX(0);transform-origin:left;
+  transition:transform .7s cubic-bezier(.16,1,.3,1) .1s}
+.mark.in .r{transform:scaleX(1)}
+svg .drw{stroke-dasharray:1600;stroke-dashoffset:1600;
+  transition:stroke-dashoffset 1s cubic-bezier(.16,1,.3,1)}
+svg.in .drw{stroke-dashoffset:0}
+.chip{transition:color .16s,border-color .16s}
+.chip:hover{color:var(--oxblood);border-color:var(--oxblood)}
+.ft-r{transition:background .16s}
+.ft-r:hover{background:var(--tint)}
+.plate{transition:border-color .2s}
+.plate:hover{border-color:var(--chip)}
+
+@media(prefers-reduced-motion:reduce){
+  .rise,.rise.in{opacity:1 !important;transform:none !important}
+  .mark .r{transform:scaleX(1) !important}
+  svg .drw{stroke-dashoffset:0 !important}
+  *{transition:none !important;animation:none !important}
+}
+
+/* ---------- STUDIO CHROME ---------- */
 #gate{position:fixed;inset:0;z-index:999;background:#101417;color:#ECEEEF;
   display:flex;align-items:center;justify-content:center;padding:24px}
 #gate .box{width:100%;max-width:380px}
 #gate .t{font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.28em;
   text-transform:uppercase;color:#6D747A;margin-bottom:22px}
 #gate input{width:100%;background:transparent;border:0;border-bottom:1px solid #33383C;
-  color:#ECEEEF;font-family:'Martian Mono',monospace;font-size:15px;letter-spacing:.16em;
-  padding:10px 0;outline:none}
+  color:#ECEEEF;font-family:'Martian Mono',monospace;font-size:15px;letter-spacing:.16em;padding:10px 0;outline:none}
 #gate input:focus{border-color:#C1462A}
 #gate .h{margin-top:16px;font-family:'Martian Mono',monospace;font-size:10px;
   letter-spacing:.18em;text-transform:uppercase;color:#4A5157}
 #gate .h.err{color:#C1462A}
 #shell{display:none}
-
-/* ---------- SWITCHER ---------- */
+#note{border-bottom:1px solid var(--rule);background:var(--tint);padding:11px var(--pad);
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--body);display:flex;gap:10px 26px;flex-wrap:wrap}
+#note b{color:var(--oxblood);font-weight:500}
 #bar{position:fixed;left:0;right:0;bottom:0;z-index:200;background:#0F1215;
-  border-top:1px solid #262B2E;padding:9px var(--pad);
-  display:flex;align-items:center;gap:7px;flex-wrap:wrap;
-  font-family:'Martian Mono',monospace;font-size:9.5px;letter-spacing:.14em;
-  text-transform:uppercase}
-#bar .lab{color:#6D747A;margin-right:2px}
-#bar button{background:transparent;border:1px solid #33383C;color:#9AA1A6;
-  font:inherit;letter-spacing:inherit;padding:6px 9px;cursor:pointer;
-  transition:border-color .15s,color .15s}
+  border-top:1px solid #262B2E;padding:9px var(--pad);display:flex;align-items:center;
+  gap:7px;flex-wrap:wrap;font-family:'Martian Mono',monospace;font-size:9.5px;
+  letter-spacing:.14em;text-transform:uppercase}
+#bar .lab{color:#6D747A}
+#bar button{background:transparent;border:1px solid #33383C;color:#9AA1A6;font:inherit;
+  letter-spacing:inherit;padding:6px 9px;cursor:pointer;transition:border-color .15s,color .15s}
 #bar button:hover{color:#ECEEEF;border-color:#5A6166}
 #bar button.on{color:#0F1215;background:#ECEEEF;border-color:#ECEEEF}
 #bar .g{color:#E6A13F}
 #bar .nav{margin-left:auto;color:#4A5157}
-
-/* ---------- NOTE STRIP ---------- */
-#note{border-bottom:1px solid var(--rule);background:var(--tint);
-  padding:11px var(--pad);font-family:var(--mono);font-size:9.5px;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--body);
-  display:flex;gap:10px 26px;flex-wrap:wrap}
-#note b{color:var(--accent);font-weight:500}
-
-/* ---------- RAIL ---------- */
-.rail{background:var(--inst);color:#F2F0EA;font-family:var(--mono);font-size:10px;
-  letter-spacing:.18em;text-transform:uppercase;display:flex;align-items:stretch}
-.rail-m{padding:11px 18px;font-weight:500;letter-spacing:.30em;
-  border-right:1px solid var(--instrule);white-space:nowrap}
-.rail-f{padding:11px 18px;border-right:1px solid var(--instrule);opacity:.78;white-space:nowrap}
-@media(max-width:820px){.rail-f:nth-child(n+4){display:none}}
-
-/* ---------- SHEET ---------- */
-.field{padding-left:var(--pad);padding-right:var(--pad)}
-.wrap{max-width:1320px;margin:0 auto}
-section{border-bottom:1px solid var(--rule);position:relative}
-.pad{padding-top:clamp(48px,6vw,88px);padding-bottom:clamp(48px,6vw,88px)}
-.alt{background:var(--bg2)}
-
-/* ---------- TYPE ---------- */
-.lbl{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--muted);margin-bottom:24px}
-.lbl b{color:var(--accent);font-weight:500}
-h1{font-family:var(--display);font-weight:var(--displayw);
-  font-size:clamp(32px,5vw,var(--h1max));line-height:var(--displaylh);
-  color:var(--ink);letter-spacing:var(--displayls);text-transform:var(--displaytr);max-width:18ch}
-h2{font-family:var(--display);font-weight:var(--displayw);
-  font-size:clamp(24px,3.2vw,38px);line-height:1.18;color:var(--ink);
-  letter-spacing:var(--displayls);text-transform:var(--displaytr);max-width:21ch}
-h3{font-family:var(--ui);font-weight:600;font-size:15px;line-height:1.35;
-  text-transform:uppercase;letter-spacing:.05em;color:var(--ink)}
-p{max-width:62ch;line-height:1.72;font-size:16.5px;color:var(--ink)}
-p+p{margin-top:14px}
-.anno{font-family:var(--display);font-style:italic;font-weight:400;color:var(--body);
-  font-size:14.5px;text-transform:none;letter-spacing:0}
-strong{font-weight:600;color:var(--ink)}
-
-/* ---------- MARK ---------- */
-.mark{display:inline-block;margin-bottom:36px}
-.mark .w{font-family:var(--markf);font-weight:var(--markw);text-transform:uppercase;
-  letter-spacing:var(--markls);font-size:clamp(19px,2.4vw,28px);line-height:1;
-  color:var(--ink);display:block}
-.mark .r{display:block;height:1px;background:var(--ink);margin-top:10px}
-.mark .b{display:block;margin-top:9px;font-size:12.5px;font-family:var(--display);
-  font-style:italic;color:var(--accent);letter-spacing:0;text-transform:none}
-
-/* ---------- FIELD TABLE ---------- */
-.ft{margin-top:40px;border-top:1px solid var(--rule);max-width:740px}
-.ft-r{display:flex;justify-content:space-between;gap:22px;padding:11px 0;
-  border-bottom:1px solid var(--rule2);font-family:var(--mono);font-size:10.5px;
-  letter-spacing:.14em;text-transform:uppercase}
-.ft-r .k{color:var(--muted)}
-.ft-r .v{color:var(--ink);text-align:right}
-.ft-r .v.ox{color:var(--accent)}
-
-/* ---------- DEVICE FRAME ---------- */
-.dev{margin-top:44px;background:var(--bg);border:1px solid var(--rule);
-  padding:24px 22px 20px;max-width:900px}
-.dev-n{font-family:var(--mono);font-size:10px;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:16px}
-.dev-f{background:var(--tint);border:1px solid var(--rule2);padding:16px}
-.dev-c{margin-top:16px;text-align:center;font-size:14.5px}
-.dev-c em{font-family:var(--display);font-style:italic;color:var(--accent);font-size:15px}
-.dev-c span{display:block;margin-top:5px;font-family:var(--display);font-style:italic;
-  color:var(--body);font-size:14px}
 .dv{display:none}.dv.on{display:block}
-
-/* ---------- CHIPS / GRID / CONTACT / FOOTER ---------- */
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px}
-.chip{border:1px solid var(--chipbd);padding:6px 11px;font-family:var(--mono);
-  font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
-.chip.ox{border-color:var(--accent);color:var(--accent)}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);
-  border:1px solid var(--rule);margin-top:40px}
-.g3>div{background:var(--bg);padding:26px 22px}
-@media(max-width:900px){.g3{grid-template-columns:1fr}}
-.cell-n{font-family:var(--mono);font-size:10px;letter-spacing:.22em;
-  text-transform:uppercase;color:var(--accent);margin-bottom:14px}
-.cell h3{margin-bottom:10px}
-.cell p{font-size:15.5px;max-width:none}
-.cell .anno{display:block;margin-top:12px}
-.mail{display:inline-block;margin-top:30px;font-family:var(--mono);
-  font-size:clamp(14px,2vw,19px);letter-spacing:.08em;color:var(--ink);
-  border-bottom:1px solid var(--accent);padding-bottom:5px}
-footer{background:var(--inst);color:#F2F0EA;
-  font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase}
-.foot{display:flex;flex-wrap:wrap;gap:12px 36px;justify-content:space-between;
-  padding-top:22px;padding-bottom:22px;opacity:.8}
-
-/* ---------- DEVICE-SPECIFIC ---------- */
 .letterbox{background:#000;padding:24px 0;border:0}
-.osd{font-family:'VT323',monospace;font-size:18px;color:var(--accent);letter-spacing:.05em}
-.formhdr{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);
-  padding:9px 0;display:flex;gap:18px;flex-wrap:wrap;font-family:'Courier Prime',monospace;
-  font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--inst)}
-.frow{display:flex;gap:14px;padding:9px 0;border-bottom:1px solid var(--rule2);
+.osd{font-family:'VT323',monospace;font-size:18px;color:var(--oxblood);letter-spacing:.05em}
+.formhdr{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:9px 0;
+  display:flex;gap:18px;flex-wrap:wrap;font-family:'Courier Prime',monospace;font-size:12px;
+  letter-spacing:.06em;text-transform:uppercase;color:var(--museum)}
+.frow{display:flex;gap:14px;padding:9px 0;border-bottom:1px solid var(--rule-2);
   font-family:'Courier Prime',monospace;font-size:13px}
 .frow .fk{color:var(--muted);min-width:120px;text-transform:uppercase;font-size:11px;letter-spacing:.1em}
-.stamp{display:inline-block;border:4px double var(--accent);color:var(--accent);
-  padding:9px 16px;transform:rotate(-8deg);font-family:'Saira Stencil One',sans-serif;
-  font-size:21px;letter-spacing:.05em;margin-top:20px}
-.tag{display:inline-block;border:2px solid var(--ink);padding:7px 12px;
-  font-family:var(--mono);font-size:10px;letter-spacing:.18em;
-  text-transform:uppercase;margin:0 8px 8px 0}
-.tag.solid{background:var(--ink);color:var(--bg)}
-@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+.stamp{display:inline-block;border:4px double var(--oxblood);color:var(--oxblood);padding:9px 16px;
+  transform:rotate(-8deg);font-family:'Saira Stencil One',sans-serif;font-size:21px;
+  letter-spacing:.05em;margin-top:20px}
+.tag{display:inline-block;border:2px solid var(--ink);padding:7px 12px;font-family:var(--mono);
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;margin:0 8px 8px 0}
+.tag.solid{background:var(--ink);color:var(--plate)}
 </style>
 </head>
 <body>
 
-<div id="gate">
-  <div class="box">
-    <div class="t">NONLIMI &middot; STUDIO &middot; RESTRICTED</div>
-    <input id="pw" type="password" autocomplete="off" spellcheck="false" placeholder="PASSPHRASE" />
-    <div class="h" id="hint">ENTER TO CONTINUE</div>
+<div id="gate"><div class="box">
+  <div class="t">NONLIMI &middot; STUDIO &middot; RESTRICTED</div>
+  <input id="pw" type="password" autocomplete="off" spellcheck="false" placeholder="PASSPHRASE" />
+  <div style="display:flex;gap:14px;align-items:center;margin-top:16px">
+    <button id="go" style="background:transparent;border:1px solid #33383C;color:#ECEEEF;font-family:'Martian Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:9px 16px;cursor:pointer">ENTER</button>
+    <span class="h" id="hint">OR PRESS RETURN</span>
   </div>
-</div>
+</div></div>
 
 <div id="shell">
-
 <div id="note">
   <span>DIRECTION REVIEW &middot; NOT PUBLIC &middot; NOT INDEXED</span>
-  <span>COPY IS IDENTICAL IN EVERY OPTION &mdash; YOU ARE JUDGING <b>IDENTITY ONLY</b></span>
-  <span>ALL BOARD FIGURES WERE PLACEHOLDERS AND ARE OMITTED</span>
+  <span>EVERY WORD IS IDENTICAL TO NONLIMI.COM &mdash; YOU ARE JUDGING <b>VISUALS ONLY</b></span>
 </div>
 
 <div class="rail">
   <div class="rail-m">NONLIMI</div>
-  <div class="rail-f" id="rf1">DIRECTION</div>
-  <div class="rail-f" id="rf2">&mdash;</div>
-  <div class="rail-f">STUDIO</div>
-  <div class="rail-f">2026&ndash;08&ndash;01</div>
+  <div class="rail-f">SITE</div>
+  <div class="rail-f"><b>NONLIMI.COM</b></div>
+  <div class="rail-f">REV C</div>
+  <div class="rail-f">2026&ndash;07&ndash;31</div>
+  <nav class="rail-n">
+    <a href="#problem">I &middot; THE PROBLEM</a>
+    <a href="#plates">II &middot; THE PLATES</a>
+    <a href="#tree">III &middot; THE TREE</a>
+    <a href="#contact">IV &middot; CORRESPONDENCE</a>
+  </nav>
 </div>
 
 <!-- ============ HERO ============ -->
-<section class="pad">
+<section class="pad" id="top">
   <div class="field wrap">
 
     <div class="mark">
       <span class="w">NONLIMI</span>
       <span class="r"></span>
-      <span class="b" id="descriptor">Dynamica non limitata</span>
+      <span class="b bino">Dynamica non limitata</span>
     </div>
 
-    <h1 id="headline">A new form of life, documented before release.</h1>
+    <h1>A new form of life, documented before release.</h1>
 
-    <p style="margin-top:24px;max-width:60ch">
+    <p style="margin-top:26px;max-width:60ch">
       Nonlimi is the validation layer for physical AI. We turn simulation into release
       evidence: a machine-checkable verdict on whether a change to an autonomous system
       is fit to ship.
     </p>
     <p style="max-width:60ch"><strong>A result you can reproduce, hand over, and be held to.</strong></p>
 
-    <!-- ============ SIGNATURE DEVICES ============ -->
-    <div class="dev">
-      <div class="dev-n" id="devn">PLATE I &middot; THE VERDICT</div>
-      <div class="dev-f" id="devf">
-
+    <!-- PLATE I — the specimen is the verdict, not the machine -->
+    <div class="plate" style="margin-top:52px;max-width:860px">
+      <div class="plate-n">PLATE I &middot; THE VERDICT</div>
+      <div class="plate-fig">
         <!-- 7a THE NEW SPECIES — engraved plate with callouts -->
         <div class="dv" data-d="7a">
           <svg viewBox="0 0 860 250" aria-label="Engraved verdict record with callouts">
@@ -238,14 +281,14 @@ footer{background:var(--inst);color:#F2F0EA;
               <line x1="300" y1="64" x2="215" y2="64"/><line x1="320" y1="142" x2="160" y2="182"/>
               <line x1="570" y1="188" x2="700" y2="188"/>
             </g>
-            <g stroke="var(--accent)" stroke-width="1.6">
+            <g stroke="var(--oxblood)" stroke-width="1.6">
               <line x1="524" y1="178" x2="546" y2="200"/><line x1="546" y1="178" x2="524" y2="200"/>
             </g>
             <g font-family="'Martian Mono',monospace" font-size="9" letter-spacing="1.5" fill="var(--muted)">
               <text x="14" y="60">1 · BASELINE REFERENCE</text><text x="14" y="178">2 · REASON CODE</text>
               <text x="708" y="184">3 · EXIT STATUS</text>
               <text x="320" y="55" fill="var(--ink)">RUN RECORD</text>
-              <text x="320" y="192" fill="var(--accent)">VERDICT — FAIL</text>
+              <text x="320" y="192" fill="var(--oxblood)">VERDICT — FAIL</text>
             </g>
           </svg>
         </div>
@@ -255,18 +298,18 @@ footer{background:var(--inst);color:#F2F0EA;
           <svg viewBox="0 0 860 250" aria-label="Operating envelope with an overshoot beyond the rated boundary">
             <g stroke="var(--rule)" stroke-width="1" fill="none">
               <line x1="70" y1="210" x2="800" y2="210"/><line x1="70" y1="20" x2="70" y2="210"/>
-              <line x1="70" y1="150" x2="800" y2="150" stroke="var(--rule2)"/>
-              <line x1="70" y1="90" x2="800" y2="90" stroke="var(--rule2)"/>
+              <line x1="70" y1="150" x2="800" y2="150" stroke="var(--rule-2)"/>
+              <line x1="70" y1="90" x2="800" y2="90" stroke="var(--rule-2)"/>
             </g>
             <path d="M70,196 L200,150 L360,118 L520,112 L650,140 L740,186 L740,210 L70,210 Z"
                   fill="var(--muted)" fill-opacity=".12" stroke="var(--muted)" stroke-width="1.5"/>
             <path d="M70,182 L210,120 L390,74 L560,66 L700,104 L800,166"
-                  fill="none" stroke="var(--accent)" stroke-width="2"/>
+                  fill="none" stroke="var(--oxblood)" stroke-width="2"/>
             <g font-family="'Martian Mono',monospace" font-size="9" letter-spacing="1.4" fill="var(--muted)">
               <text x="70" y="232">GUST 12 M/S</text><text x="360" y="232">GNSS DENIED</text>
               <text x="660" y="232">CONTESTED RF</text>
               <text x="214" y="164" fill="var(--muted)">RATED</text>
-              <text x="576" y="52" fill="var(--accent)">BEYOND</text>
+              <text x="576" y="52" fill="var(--oxblood)">BEYOND</text>
             </g>
           </svg>
         </div>
@@ -299,9 +342,9 @@ footer{background:var(--inst);color:#F2F0EA;
               <line x1="200" y1="176" x2="200" y2="186"/><line x1="330" y1="126" x2="330" y2="136"/>
               <line x1="460" y1="104" x2="460" y2="114"/><line x1="590" y1="110" x2="590" y2="120"/>
             </g>
-            <circle cx="640" cy="120" r="4.5" fill="var(--accent)"/>
+            <circle cx="640" cy="120" r="4.5" fill="var(--oxblood)"/>
             <g font-family="'Martian Mono',monospace" font-size="9" letter-spacing="1.6" fill="var(--muted)">
-              <text x="90" y="252">EPOCH II</text><text x="600" y="100" fill="var(--accent)">IN PROGRESS</text>
+              <text x="90" y="252">EPOCH II</text><text x="600" y="100" fill="var(--oxblood)">IN PROGRESS</text>
             </g>
             <text x="20" y="90" font-family="Michroma,sans-serif" font-size="72"
                   fill="var(--muted)" opacity=".16">II</text>
@@ -313,10 +356,10 @@ footer{background:var(--inst);color:#F2F0EA;
           <svg viewBox="0 0 860 250" aria-label="A single small subject casting a long flat shadow in an empty field">
             <rect x="0" y="0" width="860" height="250" fill="var(--bg)"/>
             <path d="M430,168 L700,196 L700,202 L430,180 Z" fill="var(--rule)"/>
-            <rect x="420" y="152" width="16" height="16" fill="var(--accent)"/>
+            <rect x="420" y="152" width="16" height="16" fill="var(--oxblood)"/>
             <g font-family="'Martian Mono',monospace" font-size="9" letter-spacing="1.8" fill="var(--muted)">
               <text x="20" y="26">WORLD — OF ∞</text><text x="20" y="238">NO SECOND CHANCES REQUIRED</text>
-              <text x="452" y="150" fill="var(--accent)">SUBJECT: 1</text>
+              <text x="452" y="150" fill="var(--oxblood)">SUBJECT: 1</text>
             </g>
           </svg>
         </div>
@@ -348,11 +391,11 @@ footer{background:var(--inst);color:#F2F0EA;
             </g>
             <path d="M60,168 C220,60 380,190 540,96 C640,44 720,120 800,104"
                   fill="none" stroke="var(--ink)" stroke-width="1.4"/>
-            <g fill="var(--accent)">
+            <g fill="var(--oxblood)">
               <circle cx="160" cy="120" r="4.5"/><circle cx="330" cy="146" r="4.5"/>
               <circle cx="540" cy="96" r="4.5"/><circle cx="720" cy="112" r="4.5"/>
             </g>
-            <line x1="470" y1="60" x2="470" y2="196" stroke="var(--accent)" stroke-width="2"/>
+            <line x1="470" y1="60" x2="470" y2="196" stroke="var(--oxblood)" stroke-width="2"/>
             <g font-family="'Martian Mono',monospace" font-size="9" letter-spacing="1.8" fill="var(--muted)">
               <text x="40" y="46">MOVEMENT II — ADAGIO</text><text x="40" y="222">ENTRANCE</text>
               <text x="300" y="222">HOLD</text><text x="520" y="222">TURN</text><text x="720" y="222">LANDING</text>
@@ -378,7 +421,7 @@ footer{background:var(--inst);color:#F2F0EA;
             <div style="font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;color:var(--muted);margin-top:7px">PURVEYORS OF FINE CATASTROPHES</div>
           </div>
           <div>
-            <span class="tag">CAT. BESPOKE &middot; <span style="color:var(--accent)">IN STOCK</span></span>
+            <span class="tag">CAT. BESPOKE &middot; <span style="color:var(--oxblood)">IN STOCK</span></span>
             <span class="tag solid">SUPPLIED TO DATE</span>
             <span class="tag">GNSS FOG</span><span class="tag">NAMED STORM</span>
           </div>
@@ -392,13 +435,13 @@ footer{background:var(--inst);color:#F2F0EA;
         <div class="dv" data-d="8a">
           <svg viewBox="0 0 860 250" aria-label="Trajectory arc, flown then projected, with a landfall node">
             <text x="640" y="96" font-family="var(--display)" font-size="96" fill="var(--muted)" opacity=".2">II</text>
-            <path d="M40,236 Q300,140 470,120" fill="none" stroke="var(--accent)" stroke-width="2"/>
+            <path d="M40,236 Q300,140 470,120" fill="none" stroke="var(--oxblood)" stroke-width="2"/>
             <path d="M470,120 Q640,102 820,40" fill="none" stroke="var(--brass,#A67C34)" stroke-width="2" stroke-dasharray="7 6"/>
             <path d="M40,214 Q320,110 820,18" fill="none" stroke="var(--rule)" stroke-width="1"/>
-            <circle cx="470" cy="120" r="5" fill="var(--accent)"/>
+            <circle cx="470" cy="120" r="5" fill="var(--oxblood)"/>
             <path d="M258,166 l7,-11 l7,11 z" fill="var(--brass,#A67C34)"/>
             <g font-family="'Martian Mono',monospace" font-size="9" letter-spacing="1.5" fill="var(--muted)">
-              <text x="40" y="252">DEPARTED</text><text x="424" y="146" fill="var(--accent)">LANDFALL</text>
+              <text x="40" y="252">DEPARTED</text><text x="424" y="146" fill="var(--oxblood)">LANDFALL</text>
               <text x="700" y="30" fill="var(--brass,#A67C34)">PROJECTED</text>
             </g>
           </svg>
@@ -407,7 +450,7 @@ footer{background:var(--inst);color:#F2F0EA;
         <!-- 10a THE GOLDEN RECORD — the groove index -->
         <div class="dv" data-d="10a">
           <svg viewBox="0 0 860 250" aria-label="Radial groove index disc, line only">
-            <g fill="none" stroke="var(--accent)">
+            <g fill="none" stroke="var(--oxblood)">
               <circle cx="430" cy="125" r="112" stroke-width="1.2"/>
               <circle cx="430" cy="125" r="84" stroke-width="0.8"/>
               <circle cx="430" cy="125" r="56" stroke-width="0.8"/>
@@ -416,7 +459,7 @@ footer{background:var(--inst);color:#F2F0EA;
               <line x1="509" y1="46" x2="351" y2="204" stroke-dasharray="6 5"/>
               <line x1="430" y1="13" x2="430" y2="125" stroke-dasharray="2 5"/>
             </g>
-            <circle cx="430" cy="125" r="4" fill="var(--accent)"/>
+            <circle cx="430" cy="125" r="4" fill="var(--oxblood)"/>
             <g font-family="'Martian Mono',monospace" font-size="9" letter-spacing="1.6" fill="var(--muted)">
               <text x="524" y="42">SIDE A</text><text x="228" y="216">ORIGIN</text><text x="524" y="216">CURRENT</text>
             </g>
@@ -431,18 +474,18 @@ footer{background:var(--inst);color:#F2F0EA;
             <span style="flex:1.4">OBSERVED</span><span style="flex:.7;text-align:right">&Delta;</span>
           </div>
           <div style="font-family:var(--mono);font-size:10.5px;letter-spacing:.06em">
-            <div style="display:flex;padding:9px 0;border-bottom:1px solid var(--rule2)">
+            <div style="display:flex;padding:9px 0;border-bottom:1px solid var(--rule-2)">
               <span style="flex:2">GUST</span><span style="flex:1.4;color:var(--muted)">HOLDS</span>
               <span style="flex:1.4;color:var(--muted)">HELD</span>
               <span style="flex:.7;text-align:right;color:var(--inst)">&#10003;</span></div>
-            <div style="display:flex;padding:9px 0;border-bottom:1px solid var(--rule2);background:var(--tint)">
+            <div style="display:flex;padding:9px 0;border-bottom:1px solid var(--rule-2);background:var(--tint)">
               <span style="flex:2">SENSOR DENIED</span><span style="flex:1.4;color:var(--muted)">DRIFT WITHIN BOUND</span>
               <span style="flex:1.4;color:var(--muted)">&mdash;</span>
-              <span style="flex:.7;text-align:right;color:var(--accent)">PRINTED</span></div>
-            <div style="display:flex;padding:9px 0;border-bottom:1px solid var(--rule2)">
+              <span style="flex:.7;text-align:right;color:var(--oxblood)">PRINTED</span></div>
+            <div style="display:flex;padding:9px 0;border-bottom:1px solid var(--rule-2)">
               <span style="flex:2">REDUCED VISIBILITY</span><span style="flex:1.4;color:var(--muted)">PROCEEDS</span>
               <span style="flex:1.4;color:var(--muted)">AWAITING</span>
-              <span style="flex:.7;text-align:right"><span style="display:inline-block;width:8px;height:8px;background:var(--accent)"></span></span></div>
+              <span style="flex:.7;text-align:right"><span style="display:inline-block;width:8px;height:8px;background:var(--oxblood)"></span></span></div>
           </div>
           <div style="margin-top:12px;font-family:var(--display);font-style:italic;font-size:14px;color:var(--body)">
             When the prediction misses, the miss is what gets printed.
@@ -464,7 +507,7 @@ footer{background:var(--inst);color:#F2F0EA;
               <circle cx="360" cy="125" r="13" stroke-width="1.2"/>
               <line x1="360" y1="125" x2="452" y2="79"/>
             </g>
-            <rect x="446" y="70" width="15" height="15" fill="none" stroke="var(--accent)" stroke-width="1.4" transform="rotate(16 453 77)"/>
+            <rect x="446" y="70" width="15" height="15" fill="none" stroke="var(--oxblood)" stroke-width="1.4" transform="rotate(16 453 77)"/>
             <g fill="none" stroke="var(--ink)" stroke-width="0.9">
               <rect x="620" y="152" width="212" height="66"/>
               <line x1="620" y1="174" x2="832" y2="174"/><line x1="620" y1="196" x2="832" y2="196"/>
@@ -489,7 +532,7 @@ footer{background:var(--inst);color:#F2F0EA;
               <circle cx="400" cy="156" r="26"/><line x1="400" y1="122" x2="400" y2="190"/><line x1="366" y1="156" x2="434" y2="156"/>
               <circle cx="600" cy="80" r="26"/><line x1="600" y1="46" x2="600" y2="114"/><line x1="566" y1="80" x2="634" y2="80"/>
             </g>
-            <circle cx="400" cy="156" r="4.5" fill="var(--accent)"/>
+            <circle cx="400" cy="156" r="4.5" fill="var(--oxblood)"/>
             <g fill="none" stroke="var(--ink)" stroke-width="1"><line x1="706" y1="70" x2="706" y2="40"/></g>
             <path d="M706,34 l5,10 l-10,0 z" fill="var(--ink)"/>
             <g font-family="'Martian Mono',monospace" font-size="8.5" letter-spacing="1.5" fill="var(--muted)">
@@ -533,7 +576,7 @@ footer{background:var(--inst);color:#F2F0EA;
               <text x="246" y="112" font-size="19">M</text><text x="246" y="136" font-size="19">IV</text>
             </g>
             <text x="246" y="196" text-anchor="middle" font-family="var(--display)" font-size="15"
-                  letter-spacing="2" fill="var(--accent)">MILLIARIVM</text>
+                  letter-spacing="2" fill="var(--oxblood)">MILLIARIVM</text>
             <g stroke="var(--ink)" stroke-width="1" fill="none"><rect x="500" y="40" width="320" height="190"/></g>
             <rect x="501" y="41" width="318" height="44" fill="#C8B082"/>
             <rect x="501" y="85" width="318" height="46" fill="#A98F5F"/>
@@ -551,29 +594,30 @@ footer{background:var(--inst);color:#F2F0EA;
         </div>
 
       </div>
-      <div class="dev-c">
-        <em id="devcap">Verdictum reproducibile</em>
-        <span id="devsub">&mdash; the same input, the same answer, on the same machine</span>
+      <div class="plate-cap">
+        <span class="bino">Verdictum reproducibile</span>
+        <span class="anno">&mdash; the same input, the same answer, on the same machine</span>
       </div>
     </div>
 
+    <!-- FIELD TABLE -->
     <div class="ft">
       <div class="ft-r"><span class="k">SUBJECT</span><span class="v">AUTONOMOUS SYSTEMS UNDER CHANGE</span></div>
       <div class="ft-r"><span class="k">METHOD</span><span class="v">DETERMINISTIC SIMULATION &middot; RECORDED BASELINE</span></div>
       <div class="ft-r"><span class="k">OUTPUT</span><span class="v">REASON-CODED PASS / FAIL VERDICT</span></div>
+      <div class="ft-r"><span class="k">NATURAL PREDATOR</span><span class="v ox">THE REGRESSION NOBODY CAUGHT</span></div>
       <div class="ft-r"><span class="k">LICENCE</span><span class="v">APACHE&ndash;2.0 CORE &middot; SOURCE TO PARTNERS AS THE PROGRAM OPENS</span></div>
     </div>
 
-    <div class="chips" id="chips"></div>
   </div>
 </section>
 
 <!-- ============ I — THE PROBLEM ============ -->
-<section class="pad alt">
+<section class="pad alt" id="problem">
   <div class="field wrap">
     <div class="lbl">I &middot; THE PROBLEM</div>
     <h2>Physical AI has no release process.</h2>
-    <p style="margin-top:24px">
+    <p style="margin-top:26px">
       Software solved this twenty years ago. Write a test, gate the merge, ship on green.
       The evidence is produced by the pipeline, it is the same every time, and nobody has
       to be in the room for it to count.
@@ -581,80 +625,132 @@ footer{background:var(--inst);color:#F2F0EA;
     <p>
       Autonomous systems still ship on judgement. A demo that went well. A field trial that
       did not crash. A simulation job that someone re-ran until it passed. Each of those is
-      an impression of safety, and none of them survives being asked to prove it.
+      an impression of safety, and none of them survives being asked to prove it &mdash; to a
+      customer, to an insurer, or to yourself at three in the morning after an incident.
+    </p>
+    <p>
+      That does not scale with fleet size, and it does not transfer between teams. It is
+      the bottleneck between a machine that works and a machine you can ship.
     </p>
   </div>
 </section>
 
-<!-- ============ II — WHAT WE DO ============ -->
-<section class="pad">
+<!-- ============ II — THE PLATES ============ -->
+<section class="pad" id="plates">
   <div class="field wrap">
-    <div class="lbl" id="lbl2">II &middot; THE PLATES &mdash; <b>WHAT WE DO</b></div>
+    <div class="lbl">II &middot; THE PLATES &mdash; <b>WHAT WE DO</b></div>
     <h2>We make simulation produce evidence, not impressions.</h2>
+
     <div class="g3">
       <div class="cell">
-        <div class="cell-n" id="cn1">PLATE II</div>
+        <div class="cell-n">PLATE II</div>
         <h3>Deterministic verdicts</h3>
         <p>Same seed, same architecture, same answer. A result you cannot reproduce is not evidence &mdash; it is an anecdote with a chart attached.</p>
         <span class="anno">&mdash; measured on same-architecture runs</span>
       </div>
       <div class="cell">
-        <div class="cell-n" id="cn2">PLATE III</div>
+        <div class="cell-n">PLATE III</div>
         <h3>Reason codes, not red</h3>
         <p>A failure names what moved against a recorded baseline. &ldquo;The build is broken&rdquo; is not a finding. &ldquo;Minimum clearance fell below baseline&rdquo; is.</p>
         <span class="anno">&mdash; the diagnosis, not the alarm</span>
       </div>
       <div class="cell">
-        <div class="cell-n" id="cn3">PLATE IV</div>
+        <div class="cell-n">PLATE IV</div>
         <h3>Evidence that travels</h3>
         <p>Verdicts, reason codes and the runs behind them are artifacts you can hand to someone else. Designed to support the safety case you have to make &mdash; never a claim to have made it for you.</p>
         <span class="anno">&mdash; a record, not a reassurance</span>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- ============ III — WHERE IT GOES ============ -->
-<section class="pad alt">
-  <div class="field wrap">
-    <div class="lbl" id="lbl3">III &middot; THE TREE &mdash; <b>LABELLED AS NEXT, NOT AS NOW</b></div>
-    <h2>One engine. Everything else descends from it.</h2>
-    <p style="margin-top:24px">
-      Everything past the line is direction, not availability. What ships today we publish
-      in full to the teams we work with, item by item, including what is not in hand.
-    </p>
-    <div style="margin-top:36px;border:1px solid var(--rule);background:var(--bg);padding:clamp(18px,3vw,32px)">
-      <svg viewBox="0 0 1180 210" aria-label="Planned descendants, all past the today marker">
-        <g fill="none" stroke="var(--rule)" stroke-width="1"><line x1="40" y1="176" x2="1140" y2="176"/></g>
-        <g fill="none" stroke="var(--ink)" stroke-width="1.2">
-          <line x1="120" y1="176" x2="120" y2="92"/><line x1="120" y1="92" x2="1040" y2="92"/>
-          <line x1="288" y1="92" x2="288" y2="54"/><line x1="476" y1="92" x2="476" y2="54"/>
-          <line x1="664" y1="92" x2="664" y2="54"/><line x1="852" y1="92" x2="852" y2="54"/>
-          <line x1="1040" y1="92" x2="1040" y2="54"/>
-        </g>
-        <g stroke="var(--accent)" stroke-width="2"><line x1="120" y1="192" x2="120" y2="164"/></g>
-        <g font-family="'Martian Mono',monospace" font-size="9.5" letter-spacing="1.8" fill="var(--accent)">
-          <text x="108" y="208">TODAY</text>
-        </g>
-        <g font-family="'Martian Mono',monospace" font-size="9" letter-spacing="1.3" fill="var(--muted)">
-          <text x="240" y="42">NONLIMI CLOUD</text><text x="430" y="42">EVIDENCE</text>
-          <text x="606" y="42">INCIDENT REPLAY</text><text x="800" y="42">NONLIMI MARKET</text>
-          <text x="982" y="42">SOVEREIGNTY</text>
-          <text x="138" y="128" fill="var(--ink)">THE ENGINE</text>
-        </g>
-      </svg>
-      <div style="margin-top:16px;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;
-                  text-transform:uppercase;color:var(--muted)">// NO DATES. COMMITMENTS WE CANNOT GOVERN DO NOT GO IN PRINT.</div>
+    <div class="chips">
+      <div class="chip">PLATE</div>
+      <div class="chip">FIELD NOTE</div>
+      <div class="chip">RUN RECORD</div>
+      <div class="chip ox">REV C &middot; CURRENT</div>
     </div>
   </div>
 </section>
 
-<!-- ============ IV — CONTACT ============ -->
-<section class="pad">
+<!-- ============ III — THE TREE ============ -->
+<section class="pad alt" id="tree">
   <div class="field wrap">
-    <div class="lbl" id="lbl4">IV &middot; CORRESPONDENCE</div>
+    <div class="lbl">III &middot; THE TREE &mdash; <b>LABELLED AS NEXT, NOT AS NOW</b></div>
+    <h2>One engine. Everything else descends from it.</h2>
+    <p style="margin-top:26px">
+      Everything above the line is direction, not availability. What ships today we publish
+      in full to the teams we work with, item by item, including what is not in hand &mdash; we
+      do not summarise it here, because a summary of a build state is how a build state
+      starts drifting.
+    </p>
+
+    <div class="tree">
+      <svg viewBox="0 0 1180 262" role="img" aria-label="Evolutionary tree of planned descendants from today's engine">
+          <g fill="none" stroke="#D3CCB8" stroke-width="1">
+            <line x1="40" y1="220" x2="1140" y2="220"/>
+          </g>
+          <g class="drw" fill="none" stroke="#1C1A14" stroke-width="1.2">
+            <line x1="120" y1="220" x2="120" y2="110"/>
+            <line x1="120" y1="110" x2="1040" y2="110"/>
+            <line x1="288" y1="110" x2="288" y2="64"/>
+            <line x1="476" y1="110" x2="476" y2="64"/>
+            <line x1="664" y1="110" x2="664" y2="64"/>
+            <line x1="852" y1="110" x2="852" y2="64"/>
+            <line x1="1040" y1="110" x2="1040" y2="64"/>
+          </g>
+          <g class="drw" stroke="#6E2B24" stroke-width="2"><line x1="120" y1="236" x2="120" y2="206"/></g>
+          <g font-family="'Martian Mono',monospace" font-size="10" letter-spacing="2" fill="#6E2B24">
+            <text x="108" y="254">TODAY</text>
+          </g>
+          <g font-family="'Martian Mono',monospace" font-size="9.5" letter-spacing="1.4" fill="#8D8672">
+            <text x="242" y="52">NONLIMI CLOUD</text>
+            <text x="430" y="52">EVIDENCE</text>
+            <text x="608" y="52">INCIDENT REPLAY</text>
+            <text x="800" y="52">NONLIMI MARKET</text>
+            <text x="984" y="52">SOVEREIGNTY</text>
+          </g>
+          <g font-family="'Martian Mono',monospace" font-size="9.5" letter-spacing="1.4" fill="#1C1A14">
+            <text x="138" y="150">THE ENGINE</text>
+          </g>
+        </svg>
+      <div class="tree-foot">// NO DATES. COMMITMENTS WE CANNOT GOVERN DO NOT GO IN PRINT.</div>
+    </div>
+
+    <div class="g3" style="margin-top:1px">
+      <div class="cell">
+        <div class="cell-n">DESCENDANT I</div>
+        <h3>Nonlimi Cloud</h3>
+        <p>Parallel execution, scenario generation, CI-native team workflow.</p>
+      </div>
+      <div class="cell">
+        <div class="cell-n">DESCENDANT II</div>
+        <h3>Evidence</h3>
+        <p>Published run series with N stated. A reason-code taxonomy broad enough to describe what actually goes wrong.</p>
+      </div>
+      <div class="cell">
+        <div class="cell-n">DESCENDANT III</div>
+        <h3>Incident replay</h3>
+        <p>Becomes a product job only when the sim-to-real evidence supports it &mdash; not before.</p>
+      </div>
+      <div class="cell">
+        <div class="cell-n">DESCENDANT IV</div>
+        <h3>Nonlimi Market</h3>
+        <p>A shared scenario and asset exchange.</p>
+      </div>
+      <div class="cell">
+        <div class="cell-n">DESCENDANT V</div>
+        <h3>Sovereignty</h3>
+        <p>A deployment option under no non-EU corporate control.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IV — CORRESPONDENCE ============ -->
+<section class="pad" id="contact">
+  <div class="field wrap">
+    <div class="lbl">IV &middot; CORRESPONDENCE</div>
     <h2>If release confidence is your bottleneck, we would like to hear about it.</h2>
-    <p style="margin-top:24px">
+    <p style="margin-top:26px">
       We work with a small number of teams at a time, closely, and we would rather tell you
       early that it is not a fit than find out slowly together.
     </p>
@@ -664,249 +760,95 @@ footer{background:var(--inst);color:#F2F0EA;
 
 <footer>
   <div class="field foot wrap">
-    <span>NONLIMI DYNAMICS S.L. &middot; MADRID, ES</span>
-    <span id="fdir">DIRECTION &mdash;</span>
-    <span>STUDIO &middot; NOT FOR CIRCULATION</span>
+    <span>NONLIMI DYNAMICS S.L. &middot; <b>MADRID, ES</b></span>
+    <span>REV <b>C</b> &middot; 2026&ndash;07&ndash;31</span>
+    <span>&copy; 2026 NONLIMI DYNAMICS S.L.</span>
   </div>
 </footer>
 
+
 </div><!-- /shell -->
-
 <div id="bar"></div>
-
 <script>
 (function () {
-  /* ---- passphrase: a privacy screen, not security. Static host, no server. ---- */
+  /* Passphrase is a privacy screen, not security: static host, no server-side auth. */
   var KEY = 'dynamica';
-  var gate = document.getElementById('gate'), pw = document.getElementById('pw'),
-      hint = document.getElementById('hint'), shell = document.getElementById('shell');
-  function open_() { gate.style.display = 'none'; shell.style.display = 'block'; apply(order[0]); }
+  var gate=document.getElementById('gate'), pw=document.getElementById('pw'),
+      hint=document.getElementById('hint'), shell=document.getElementById('shell');
   pw.addEventListener('keydown', function (e) {
     if (e.key !== 'Enter') return;
-    if (pw.value.trim().toLowerCase() === KEY) { open_(); }
-    else { hint.textContent = 'NOT RECOGNISED'; hint.className = 'h err'; pw.value = ''; }
+    tryOpen();
   });
+  function tryOpen(){
+    if (pw.value.trim().toLowerCase() === KEY) {
+      gate.style.display='none'; shell.style.display='block'; apply(order[0]);
+    } else { hint.textContent='NOT RECOGNISED'; hint.className='h err'; pw.value=''; }
+  }
+  document.getElementById('go').addEventListener('click', tryOpen);
   pw.focus();
 
-  /* ---- the nine directions, tokens exactly as specified on the boards ---- */
   var T = {
-    '7a': { n:'THE NEW SPECIES', r:'GREAT', pol:'light',
-      v:{bg:'#F8F5EC',bg2:'#F4F1E8',tint:'#F1ECDD',rule:'#D3CCB8',rule2:'#DDD6C2',chipbd:'#C6BFA9',
-         ink:'#1C1A14',body:'#4A463A',muted:'#8D8672',inst:'#1E3B32',instrule:'#2A4436',accent:'#6E2B24'},
-      f:{display:"'Spectral',Georgia,serif",displayw:'500',displaytr:'none',displayls:'-.005em',
-         markf:"'Saira',sans-serif",markw:'500',markls:'.42em',h1max:'56px'},
-      head:'A new form of life, documented before release.', desc:'Dynamica non limitata',
-      devn:'PLATE I · THE VERDICT', cap:'Verdictum reproducibile',
-      sub:'— the same input, the same answer, on the same machine',
-      chips:[['PLATE',0],['FIELD NOTE',0],['RUN RECORD',0],['REV C · CURRENT',1]] },
-
-    '5b': { n:'THE ENVELOPE', r:'GREAT', pol:'dark',
-      v:{bg:'#101417',bg2:'#0D1113',tint:'#151A1E',rule:'#262B2E',rule2:'#20262B',chipbd:'#33383C',
-         ink:'#F4F6F7',body:'#A8B0B4',muted:'#6D747A',inst:'#0A0D0F',instrule:'#20262B',accent:'#C1462A'},
-      f:{display:"'Saira',sans-serif",displayw:'700',displaytr:'none',displayls:'-.03em',
-         markf:"'Saira',sans-serif",markw:'700',markls:'.05em',h1max:'52px'},
-      head:'Rated to twelve metres per second. Flown at nineteen.', desc:'The frontier, in the engineer’s own word',
-      devn:'FIG. 01 · OPERATING ENVELOPE', cap:'Boundary, and something crossing it',
-      sub:'— grey is rated, red is beyond',
-      chips:[['RATED',0],['EXCEEDED',1],['RE-RATED',0]] },
-
-    '5bL': { n:'THE ENVELOPE — LIGHT', r:'GREAT', pol:'light',
-      v:{bg:'#ECEEEF',bg2:'#E6E9EA',tint:'#E1E5E6',rule:'#CFD4D7',rule2:'#D9DDDF',chipbd:'#C0C6C9',
-         ink:'#191D20',body:'#4A5157',muted:'#6D747A',inst:'#191D20',instrule:'#33383C',accent:'#C1462A'},
-      f:{display:"'Saira',sans-serif",displayw:'700',displaytr:'none',displayls:'-.03em',
-         markf:"'Saira',sans-serif",markw:'700',markls:'.05em',h1max:'52px'},
-      head:'Rated to twelve metres per second. Flown at nineteen.', desc:'The frontier, in the engineer\u2019s own word',
-      devn:'FIG. 01 · OPERATING ENVELOPE', cap:'Boundary, and something crossing it',
-      sub:'\u2014 the palette as named on the board: nothing new to buy',
-      chips:[['RATED',0],['EXCEEDED',1],['RE-RATED',0]] },
-
-    '5c': { n:'FIRST LIGHT', r:'GREAT', pol:'dark',
-      v:{bg:'#0B0D10',bg2:'#101418',tint:'#1C242D',rule:'#21262C',rule2:'#1A1F24',chipbd:'#2A323C',
-         ink:'#F3EDE2',body:'#A9A698',muted:'#6D747A',inst:'#07090B',instrule:'#1C242D',accent:'#E6A13F'},
-      f:{display:"'Saira',sans-serif",displayw:'300',displaytr:'none',displayls:'.1em',
-         markf:"'Saira',sans-serif",markw:'300',markls:'.3em',h1max:'46px'},
-      head:'The night shift that hands the world its mornings.', desc:'Night is where autonomy is earned',
-      devn:'THE TERMINATOR LINE', cap:'Night, then amber',
-      sub:'— dark carries the work, light carries the outcome',
-      chips:[['NIGHT = SIMULATED',0],['LIGHT = FLOWN',1]] },
-
-    '8a': { n:'THE EXPEDITION', r:'GREAT', pol:'light',
-      v:{bg:'#F4F1E8',bg2:'#F8F5EC',tint:'#EFEBE0',rule:'#D3CCB8',rule2:'#DDD6C2',chipbd:'#C6BFA9',
-         ink:'#1C1A14',body:'#4A463A',muted:'#8D8672',inst:'#1E3B32',instrule:'#2A4436',accent:'#6E2B24',
-         brass:'#A67C34'},
-      f:{display:"'Spectral',Georgia,serif",displayw:'500',displaytr:'none',displayls:'-.005em',
-         markf:"'Saira',sans-serif",markw:'500',markls:'.42em',h1max:'54px'},
-      head:'Someone has to go first. We send a species that can.', desc:'Valencia expeditio · Autonomia',
-      devn:'VOYAGE OUT, SPECIMENS BACK', cap:'Expedition and specimen',
-      sub:'\u2014 expedition grammar may only structure; museum grammar may only fill',
-      chips:[['DEPARTED',0],['SURVEYING',0],['RETURNED',1]] },
-
-    '10a': { n:'THE GOLDEN RECORD', r:'GREAT', pol:'dark',
-      v:{bg:'#0E0C08',bg2:'#131009',tint:'#17130B',rule:'#2A2416',rule2:'#221D12',chipbd:'#6B5313',
-         ink:'#E8E2D2',body:'#A9A392',muted:'#6B5313',inst:'#000000',instrule:'#2A2416',accent:'#C9A227'},
-      f:{display:"'Syncopate',sans-serif",displayw:'400',displaytr:'uppercase',displayls:'.06em',
-         markf:"'Syncopate',sans-serif",markw:'400',markls:'.22em',h1max:'32px'},
-      head:'Built to be read by what we build.', desc:'A message to a mind we are still building',
-      devn:'THE GROOVE INDEX', cap:'Void and etch',
-      sub:'\u2014 gold is a line, never a fill',
-      chips:[['SIDE A',0],['GROOVE',0],['PRESSING',1]] },
-
-    '10c': { n:'THE EPHEMERIS', r:'GREAT', pol:'light',
-      v:{bg:'#F6F2E6',bg2:'#F1ECDE',tint:'#EDE7D6',rule:'#D5CDB8',rule2:'#E0D9C6',chipbd:'#C4BBA4',
-         ink:'#221F18',body:'#4C4738',muted:'#857E6B',inst:'#2C4A6E',instrule:'#1F3654',accent:'#B23A24'},
-      f:{display:"'Spectral',Georgia,serif",displayw:'500',displaytr:'none',displayls:'-.005em',
-         markf:"'Spectral',Georgia,serif",markw:'500',markls:'.18em',h1max:'52px'},
-      head:'We publish tomorrow, then print the error.', desc:'Computers of futures',
-      devn:'THE \u0394 COLUMN', cap:'Predicted, observed, and the gap',
-      sub:'\u2014 errata are the product, not the embarrassment',
-      chips:[['EPOCH',0],['EDITION',0],['ERRATA PRINTED',1]] },
-
-    '11a': { n:'THE GROUND SEGMENT', r:'GREAT', pol:'dark',
-      v:{bg:'#262B27',bg2:'#2B302C',tint:'#30352F',rule:'#3D443E',rule2:'#363C37',chipbd:'#5C675E',
-         ink:'#E8EBE5',body:'#B4BAB2',muted:'#8A948B',inst:'#1B1F1C',instrule:'#3D443E',accent:'#D97B2C'},
-      f:{display:"'Big Shoulders Display',sans-serif",displayw:'900',displaytr:'uppercase',displayls:'.01em',
-         markf:"'Saira',sans-serif",markw:'500',markls:'.34em',h1max:'78px'},
-      head:'The aircraft is the visible one percent.', desc:'Ground segment',
-      devn:'THE SITE PLAN', cap:'Poured, not flown',
-      sub:'\u2014 everyone watches the sky; we build the ground',
-      chips:[['SITE',0],['ARRAY · DATA',0],['COMMISSIONED',1]] },
-
-    '11b': { n:'THE BEDROCK', r:'GREAT', pol:'light',
-      v:{bg:'#EFE9DC',bg2:'#E9E4D2',tint:'#E3DCC7',rule:'#C9B183',rule2:'#D5C6A4',chipbd:'#A98F5F',
-         ink:'#33302B',body:'#5A5346',muted:'#7D6A48',inst:'#33302B',instrule:'#4A4438',accent:'#7D6A48'},
-      f:{display:"'Big Shoulders Display',sans-serif",displayw:'900',displaytr:'uppercase',displayls:'.01em',
-         markf:"'Saira',sans-serif",markw:'500',markls:'.34em',h1max:'78px'},
-      head:'Deployed autonomy is a surface phenomenon.', desc:'Foundation works',
-      devn:'THE CORE SAMPLE', cap:'Sediment, to depth',
-      sub:'\u2014 the surface is theirs; every layer under it is ours',
-      chips:[['CORE',0],['SIMULATION LAYER',0],['LOAD-BEARING',1]] },
-
-    '11c': { n:'THE MILESTONE ROAD', r:'GREAT', pol:'light',
-      v:{bg:'#ECE5D6',bg2:'#E5DDCA',tint:'#DFD6C0',rule:'#C6BBA1',rule2:'#D3C9B2',chipbd:'#9A7B3F',
-         ink:'#2B2620',body:'#544D41',muted:'#8A7F6B',inst:'#2B2620',instrule:'#443D33',accent:'#8E3B2C'},
-      f:{display:"'Marcellus',serif",displayw:'400',displaytr:'uppercase',displayls:'.03em',
-         markf:"'Marcellus',serif",markw:'400',markls:'.24em',h1max:'50px'},
-      head:'Rome did not advance by inventing the legion.', desc:'Viam fecimus \u00b7 we built the road',
-      devn:'THE MILESTONE', cap:'Quarried',
-      sub:'\u2014 civilisation moves on infrastructure someone overbuilt on purpose',
-      chips:[['VIA AUTONOMA',0],['SEGMENT UNDER WAY',0],['DEDICATED',1]] },
-
-    '10d': { n:'THE WORLD MACHINE', r:'GOOD', pol:'dark',
-      v:{bg:'#10314F',bg2:'#0D2942',tint:'#143A5C',rule:'#2A5578',rule2:'#22496A',chipbd:'#2A5578',
-         ink:'#E9F0F4',body:'#B3C6D3',muted:'#7FA0B8',inst:'#0A2137',instrule:'#2A5578',accent:'#D9B036'},
-      f:{display:"'Saira Stencil One',sans-serif",displayw:'400',displaytr:'uppercase',displayls:'.02em',
-         markf:"'Saira Stencil One',sans-serif",markw:'400',markls:'.16em',h1max:'46px'},
-      head:'An orrery for autonomy, printed in cyanotype.', desc:'World machine works',
-      devn:'THE TITLE BLOCK', cap:'Ferric',
-      sub:'\u2014 we build the machine that runs worlds',
-      chips:[['DRAWING',0],['REV',0],['CHECKED',1]] },
-
-    '5a': { n:'THE PROGRAMME', r:'GOOD', pol:'dark',
-      v:{bg:'#0A0D12',bg2:'#141A22',tint:'#12171E',rule:'#1F262E',rule2:'#232B34',chipbd:'#232B34',
-         ink:'#EDEDE6',body:'#9BA3AB',muted:'#6F7883',inst:'#070A0E',instrule:'#1F262E',accent:'#C1462A'},
-      f:{display:"'Michroma',sans-serif",displayw:'400',displaytr:'uppercase',displayls:'.01em',
-         markf:"'Michroma',sans-serif",markw:'400',markls:'.10em',h1max:'40px'},
-      head:'Autonomy as humankind’s next flight programme.', desc:'Programme 01 · Autonomy',
-      devn:'TRAJECTORY · EPOCH II', cap:'Epochs and expeditions',
-      sub:'— the only permitted illustration. No stars, ever.',
-      chips:[['EPOCH I · TELEOP',0],['EPOCH II · SUPERVISED',1],['EPOCH III · UNATTENDED',0]] },
-
-    '6a': { n:'THE WHITE LIMBO', r:'GOOD', pol:'light',
-      v:{bg:'#F7F7F3',bg2:'#F4F4F0',tint:'#EFEFEA',rule:'#D8D8D2',rule2:'#DDDDD6',chipbd:'#C9C9C2',
-         ink:'#0D0D0C',body:'#3A3E42',muted:'#8A8E90',inst:'#0D0D0C',instrule:'#2A2A28',accent:'#FF4F00'},
-      f:{display:"'Big Shoulders Display',sans-serif",displayw:'900',displaytr:'uppercase',displayls:'.01em',
-         markf:"'Big Shoulders Display',sans-serif",markw:'900',markls:'.02em',h1max:'86px'},
-      head:'An empty world for every mistake.', desc:'The emptiness is the product',
-      devn:'SUBJECT UNDER TEST', cap:'Void and international orange',
-      sub:'— orange marks exactly one thing: the subject',
-      chips:[['VOID = SIMULATION',0],['ORANGE = THE SUBJECT',1]] },
-
-    '6c': { n:'THE TRANSMISSION', r:'GOOD', pol:'dark',
-      v:{bg:'#070A09',bg2:'#050607',tint:'#0A0F0C',rule:'#1A2620',rule2:'#142019',chipbd:'#2A4436',
-         ink:'#DFF5E6',body:'#9FB3A7',muted:'#4E7A63',inst:'#000000',instrule:'#1A2620',accent:'#46E08A'},
-      f:{display:"'Syncopate',sans-serif",displayw:'700',displaytr:'uppercase',displayls:'.06em',
-         markf:"'Syncopate',sans-serif",markw:'700',markls:'.14em',h1max:'34px'},
-      head:'Live from the future of flight.', desc:'A simulation in N parts',
-      devn:'REC · TRANSMISSION', cap:'Broadcast grammar',
-      sub:'— phosphor is the OSD layer only; titles stay signal-white',
-      chips:[['COLD OPEN',0],['TITLE CARD',0],['LIVE FEED',1],['CREDITS',0]] },
-
-    '7c': { n:'THE CHOREOGRAPHY', r:'GOOD', pol:'light',
-      v:{bg:'#FAF6EE',bg2:'#F6F1E7',tint:'#F2ECDF',rule:'#C9C0AB',rule2:'#DDD5C4',chipbd:'#C9C0AB',
-         ink:'#191714',body:'#55503F',muted:'#948C7A',inst:'#191714',instrule:'#3A362C',accent:'#D8432C'},
-      f:{display:"'Marcellus',serif",displayw:'400',displaytr:'none',displayls:'.01em',
-         markf:"'Marcellus',serif",markw:'400',markls:'.18em',h1max:'54px'},
-      head:'Flight, written and performed.', desc:'Opus 01 · Autonomy',
-      devn:'MOVEMENT II · ADAGIO', cap:'The score',
-      sub:'— predictable is graceful, and graceful is a safety property',
-      chips:[['WRITTEN',0],['REHEARSED',0],['PERFORMED',1]] },
-
-    '6b': { n:'THE BUREAU OF IMPOSSIBLE FLIGHT', r:'UNRATED', pol:'light',
-      v:{bg:'#F2EAD3',bg2:'#E9DFC4',tint:'#EFE6CE',rule:'#C9BC9A',rule2:'#D6CBAC',chipbd:'#A89C7D',
-         ink:'#1F1B16',body:'#4A4335',muted:'#7A6F58',inst:'#16606B',instrule:'#0F4A53',accent:'#B3402A'},
-      f:{display:"'Courier Prime',monospace",displayw:'700',displaytr:'uppercase',displayls:'.02em',
-         markf:"'Courier Prime',monospace",markw:'700',markls:'.08em',h1max:'40px'},
-      head:'Permission to exceed, in triplicate.', desc:'Form NL–104',
-      devn:'FORM NL–104', cap:'Everything is a form',
-      sub:'— the flatter the paperwork, the more outrageous the request',
-      chips:[['REQUESTED',0],['REHEARSED',0],['APPROVED',1]] },
-
-    '7b': { n:'THE STORM CATALOGUE', r:'UNRATED', pol:'light',
-      v:{bg:'#EAF0EF',bg2:'#E4EAEA',tint:'#DFE7E6',rule:'#B9C6C6',rule2:'#CBD6D5',chipbd:'#9FB0B0',
-         ink:'#14201F',body:'#3C4A4A',muted:'#5D6F70',inst:'#14201F',instrule:'#2E7C8F',accent:'#C13B2A'},
-      f:{display:"'Anton',sans-serif",displayw:'400',displaytr:'uppercase',displayls:'.01em',
-         markf:"'Anton',sans-serif",markw:'400',markls:'.015em',h1max:'64px'},
-      head:'Purveyors of fine catastrophes, made to order.', desc:'Est. Run 0001',
-      devn:'STOCK LIST', cap:'The catalogue',
-      sub:'— numbered storms, sold with provenance and a guarantee',
-      chips:[['GNSS FOG',0],['NAMED STORM',0],['SOLD OUT',1]] }
+    '7a': { n:'THE NEW SPECIES', r:'GREAT', v:{plate:'#F8F5EC',plate2:'#F4F1E8',tint:'#F1ECDD',rule:'#D3CCB8',rulet:'#DDD6C2',chipb:'#C6BFA9', ink:'#1C1A14',body:'#4A463A',muted:'#8D8672',museum:'#1E3B32',museumrule:'#2A4436',oxblood:'#6E2B24'}, f:{display:"'Spectral',Georgia,serif",displayw:'500',displaytr:'none',displayls:'-.005em', markf:"'Saira',sans-serif",markw:'500',markls:'.42em',h1max:'56px'} },
+    '5b': { n:'THE ENVELOPE', r:'GREAT', v:{plate:'#101417',plate2:'#0D1113',tint:'#151A1E',rule:'#262B2E',rulet:'#20262B',chipb:'#33383C', ink:'#F4F6F7',body:'#A8B0B4',muted:'#6D747A',museum:'#0A0D0F',museumrule:'#20262B',oxblood:'#C1462A'}, f:{display:"'Saira',sans-serif",displayw:'700',displaytr:'none',displayls:'-.03em', markf:"'Saira',sans-serif",markw:'700',markls:'.05em',h1max:'52px'} },
+    '5bL': { n:'THE ENVELOPE — LIGHT', r:'GREAT', v:{plate:'#ECEEEF',plate2:'#E6E9EA',tint:'#E1E5E6',rule:'#CFD4D7',rulet:'#D9DDDF',chipb:'#C0C6C9', ink:'#191D20',body:'#4A5157',muted:'#6D747A',museum:'#191D20',museumrule:'#33383C',oxblood:'#C1462A'}, f:{display:"'Saira',sans-serif",displayw:'700',displaytr:'none',displayls:'-.03em', markf:"'Saira',sans-serif",markw:'700',markls:'.05em',h1max:'52px'} },
+    '5c': { n:'FIRST LIGHT', r:'GREAT', v:{plate:'#0B0D10',plate2:'#101418',tint:'#1C242D',rule:'#21262C',rulet:'#1A1F24',chipb:'#2A323C', ink:'#F3EDE2',body:'#A9A698',muted:'#6D747A',museum:'#07090B',museumrule:'#1C242D',oxblood:'#E6A13F'}, f:{display:"'Saira',sans-serif",displayw:'300',displaytr:'none',displayls:'.1em', markf:"'Saira',sans-serif",markw:'300',markls:'.3em',h1max:'46px'} },
+    '8a': { n:'THE EXPEDITION', r:'GREAT', v:{plate:'#F4F1E8',plate2:'#F8F5EC',tint:'#EFEBE0',rule:'#D3CCB8',rulet:'#DDD6C2',chipb:'#C6BFA9', ink:'#1C1A14',body:'#4A463A',muted:'#8D8672',museum:'#1E3B32',museumrule:'#2A4436',oxblood:'#6E2B24', brass:'#A67C34'}, f:{display:"'Spectral',Georgia,serif",displayw:'500',displaytr:'none',displayls:'-.005em', markf:"'Saira',sans-serif",markw:'500',markls:'.42em',h1max:'54px'} },
+    '10a': { n:'THE GOLDEN RECORD', r:'GREAT', v:{plate:'#0E0C08',plate2:'#131009',tint:'#17130B',rule:'#2A2416',rulet:'#221D12',chipb:'#6B5313', ink:'#E8E2D2',body:'#A9A392',muted:'#6B5313',museum:'#000000',museumrule:'#2A2416',oxblood:'#C9A227'}, f:{display:"'Syncopate',sans-serif",displayw:'400',displaytr:'uppercase',displayls:'.06em', markf:"'Syncopate',sans-serif",markw:'400',markls:'.22em',h1max:'32px'} },
+    '10c': { n:'THE EPHEMERIS', r:'GREAT', v:{plate:'#F6F2E6',plate2:'#F1ECDE',tint:'#EDE7D6',rule:'#D5CDB8',rulet:'#E0D9C6',chipb:'#C4BBA4', ink:'#221F18',body:'#4C4738',muted:'#857E6B',museum:'#2C4A6E',museumrule:'#1F3654',oxblood:'#B23A24'}, f:{display:"'Spectral',Georgia,serif",displayw:'500',displaytr:'none',displayls:'-.005em', markf:"'Spectral',Georgia,serif",markw:'500',markls:'.18em',h1max:'52px'} },
+    '11a': { n:'THE GROUND SEGMENT', r:'GREAT', v:{plate:'#262B27',plate2:'#2B302C',tint:'#30352F',rule:'#3D443E',rulet:'#363C37',chipb:'#5C675E', ink:'#E8EBE5',body:'#B4BAB2',muted:'#8A948B',museum:'#1B1F1C',museumrule:'#3D443E',oxblood:'#D97B2C'}, f:{display:"'Big Shoulders Display',sans-serif",displayw:'900',displaytr:'uppercase',displayls:'.01em', markf:"'Saira',sans-serif",markw:'500',markls:'.34em',h1max:'78px'} },
+    '11b': { n:'THE BEDROCK', r:'GREAT', v:{plate:'#EFE9DC',plate2:'#E9E4D2',tint:'#E3DCC7',rule:'#C9B183',rulet:'#D5C6A4',chipb:'#A98F5F', ink:'#33302B',body:'#5A5346',muted:'#7D6A48',museum:'#33302B',museumrule:'#4A4438',oxblood:'#7D6A48'}, f:{display:"'Big Shoulders Display',sans-serif",displayw:'900',displaytr:'uppercase',displayls:'.01em', markf:"'Saira',sans-serif",markw:'500',markls:'.34em',h1max:'78px'} },
+    '11c': { n:'THE MILESTONE ROAD', r:'GREAT', v:{plate:'#ECE5D6',plate2:'#E5DDCA',tint:'#DFD6C0',rule:'#C6BBA1',rulet:'#D3C9B2',chipb:'#9A7B3F', ink:'#2B2620',body:'#544D41',muted:'#8A7F6B',museum:'#2B2620',museumrule:'#443D33',oxblood:'#8E3B2C'}, f:{display:"'Marcellus',serif",displayw:'400',displaytr:'uppercase',displayls:'.03em', markf:"'Marcellus',serif",markw:'400',markls:'.24em',h1max:'50px'} },
+    '10d': { n:'THE WORLD MACHINE', r:'GOOD', v:{plate:'#10314F',plate2:'#0D2942',tint:'#143A5C',rule:'#2A5578',rulet:'#22496A',chipb:'#2A5578', ink:'#E9F0F4',body:'#B3C6D3',muted:'#7FA0B8',museum:'#0A2137',museumrule:'#2A5578',oxblood:'#D9B036'}, f:{display:"'Saira Stencil One',sans-serif",displayw:'400',displaytr:'uppercase',displayls:'.02em', markf:"'Saira Stencil One',sans-serif",markw:'400',markls:'.16em',h1max:'46px'} },
+    '5a': { n:'THE PROGRAMME', r:'GOOD', v:{plate:'#0A0D12',plate2:'#141A22',tint:'#12171E',rule:'#1F262E',rulet:'#232B34',chipb:'#232B34', ink:'#EDEDE6',body:'#9BA3AB',muted:'#6F7883',museum:'#070A0E',museumrule:'#1F262E',oxblood:'#C1462A'}, f:{display:"'Michroma',sans-serif",displayw:'400',displaytr:'uppercase',displayls:'.01em', markf:"'Michroma',sans-serif",markw:'400',markls:'.10em',h1max:'40px'} },
+    '6a': { n:'THE WHITE LIMBO', r:'GOOD', v:{plate:'#F7F7F3',plate2:'#F4F4F0',tint:'#EFEFEA',rule:'#D8D8D2',rulet:'#DDDDD6',chipb:'#C9C9C2', ink:'#0D0D0C',body:'#3A3E42',muted:'#8A8E90',museum:'#0D0D0C',museumrule:'#2A2A28',oxblood:'#FF4F00'}, f:{display:"'Big Shoulders Display',sans-serif",displayw:'900',displaytr:'uppercase',displayls:'.01em', markf:"'Big Shoulders Display',sans-serif",markw:'900',markls:'.02em',h1max:'86px'} },
+    '6c': { n:'THE TRANSMISSION', r:'GOOD', v:{plate:'#070A09',plate2:'#050607',tint:'#0A0F0C',rule:'#1A2620',rulet:'#142019',chipb:'#2A4436', ink:'#DFF5E6',body:'#9FB3A7',muted:'#4E7A63',museum:'#000000',museumrule:'#1A2620',oxblood:'#46E08A'}, f:{display:"'Syncopate',sans-serif",displayw:'700',displaytr:'uppercase',displayls:'.06em', markf:"'Syncopate',sans-serif",markw:'700',markls:'.14em',h1max:'34px'} },
+    '7c': { n:'THE CHOREOGRAPHY', r:'GOOD', v:{plate:'#FAF6EE',plate2:'#F6F1E7',tint:'#F2ECDF',rule:'#C9C0AB',rulet:'#DDD5C4',chipb:'#C9C0AB', ink:'#191714',body:'#55503F',muted:'#948C7A',museum:'#191714',museumrule:'#3A362C',oxblood:'#D8432C'}, f:{display:"'Marcellus',serif",displayw:'400',displaytr:'none',displayls:'.01em', markf:"'Marcellus',serif",markw:'400',markls:'.18em',h1max:'54px'} },
+    '6b': { n:'THE BUREAU OF IMPOSSIBLE FLIGHT', r:'UNRATED', v:{plate:'#F2EAD3',plate2:'#E9DFC4',tint:'#EFE6CE',rule:'#C9BC9A',rulet:'#D6CBAC',chipb:'#A89C7D', ink:'#1F1B16',body:'#4A4335',muted:'#7A6F58',museum:'#16606B',museumrule:'#0F4A53',oxblood:'#B3402A'}, f:{display:"'Courier Prime',monospace",displayw:'700',displaytr:'uppercase',displayls:'.02em', markf:"'Courier Prime',monospace",markw:'700',markls:'.08em',h1max:'40px'} },
+    '7b': { n:'THE STORM CATALOGUE', r:'UNRATED', v:{plate:'#EAF0EF',plate2:'#E4EAEA',tint:'#DFE7E6',rule:'#B9C6C6',rulet:'#CBD6D5',chipb:'#9FB0B0', ink:'#14201F',body:'#3C4A4A',muted:'#5D6F70',museum:'#14201F',museumrule:'#2E7C8F',oxblood:'#C13B2A'}, f:{display:"'Anton',sans-serif",displayw:'400',displaytr:'uppercase',displayls:'.01em', markf:"'Anton',sans-serif",markw:'400',markls:'.015em',h1max:'64px'} }
   };
   var order = ['7a','5b','5bL','5c','8a','10a','10c','11a','11b','11c','5a','6a','6c','7c','10d','6b','7b'];
 
+  /* Only tokens and the device drawing change. Every word on the page is fixed. */
+  var MAP = { plate:'--plate', plate2:'--plate-2', tint:'--tint', rule:'--rule',
+              rulet:'--rule-2', chipb:'--chip', ink:'--ink', body:'--body',
+              muted:'--muted', museum:'--museum', museumrule:'--museum-rule',
+              oxblood:'--oxblood', brass:'--brass' };
+  var FMAP = { display:'--serif', displayw:'--displayw', displaytr:'--displaytr',
+               displayls:'--displayls', markf:'--markf', markw:'--markw',
+               markls:'--markls', h1max:'--h1max' };
+  var cur = 0;
+
   function apply(id) {
-    var t = T[id], root = document.documentElement.style;
-    for (var k in t.v) root.setProperty('--' + k, t.v[k]);
-    for (var k2 in t.f) root.setProperty('--' + k2, t.f[k2]);
-    document.getElementById('headline').textContent = t.head;
-    document.getElementById('descriptor').textContent = t.desc;
-    document.getElementById('devn').textContent = t.devn;
-    document.getElementById('devcap').textContent = t.cap;
-    document.getElementById('devsub').textContent = t.sub;
-    document.getElementById('rf1').textContent = id.toUpperCase();
-    document.getElementById('rf2').textContent = t.n;
-    document.getElementById('fdir').textContent = id.toUpperCase() + ' — ' + t.n;
-    var c = document.getElementById('chips'); c.innerHTML = '';
-    t.chips.forEach(function (p) {
-      var d = document.createElement('div');
-      d.className = 'chip' + (p[1] ? ' ox' : ''); d.textContent = p[0]; c.appendChild(d);
-    });
+    var t = T[id], r = document.documentElement.style, k;
+    for (k in t.v) if (MAP[k]) r.setProperty(MAP[k], t.v[k]);
+    for (k in t.f) if (FMAP[k]) r.setProperty(FMAP[k], t.f[k]);
     Array.prototype.forEach.call(document.querySelectorAll('.dv'), function (d) {
       d.classList.toggle('on', d.getAttribute('data-d') === (id === '5bL' ? '5b' : id));
     });
     Array.prototype.forEach.call(document.querySelectorAll('#bar button'), function (b) {
       b.classList.toggle('on', b.getAttribute('data-id') === id);
     });
-    window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+    window.scrollTo(0, 0);
     cur = order.indexOf(id);
   }
 
-  var cur = 0, bar = document.getElementById('bar');
-  var lab = document.createElement('span'); lab.className = 'lab'; lab.textContent = 'DIRECTION';
+  var bar = document.getElementById('bar');
+  var lab = document.createElement('span'); lab.className='lab'; lab.textContent='DIRECTION';
   bar.appendChild(lab);
   order.forEach(function (id) {
     var b = document.createElement('button');
     b.setAttribute('data-id', id);
-    b.innerHTML = id.toUpperCase() + ' ' + T[id].n + (T[id].r === 'GREAT' ? ' <span class="g">★</span>' : '');
+    b.innerHTML = id.toUpperCase() + ' ' + T[id].n + (T[id].r === 'GREAT' ? ' <span class="g">&#9733;</span>' : '');
     b.addEventListener('click', function () { apply(id); });
     bar.appendChild(b);
   });
-  var nav = document.createElement('span'); nav.className = 'nav';
-  nav.textContent = '← → TO STEP THROUGH'; bar.appendChild(nav);
+  var nav = document.createElement('span'); nav.className='nav';
+  nav.textContent='\u2190 \u2192 TO STEP THROUGH'; bar.appendChild(nav);
 
   document.addEventListener('keydown', function (e) {
     if (shell.style.display !== 'block') return;
     if (e.key === 'ArrowRight') apply(order[(cur + 1) % order.length]);
-    if (e.key === 'ArrowLeft') apply(order[(cur - 1 + order.length) % order.length]);
+    if (e.key === 'ArrowLeft')  apply(order[(cur - 1 + order.length) % order.length]);
   });
 })();
 </script>
