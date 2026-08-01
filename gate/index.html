@@ -183,6 +183,102 @@ p+p{margin-top:16px}
 footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono);font-size:11px;text-transform:uppercase}
 .foot{display:flex;flex-wrap:wrap;gap:16px 40px;justify-content:space-between;padding-top:26px;padding-bottom:26px}
 .foot b{color:var(--stock);font-weight:400}
+/* ---------- MOTION — deterministic replay ----------
+   The terminal replays a recorded run: whole lines flush to the log,
+   tags land after their line, the exit code lands last — identical
+   timings on every load. Records are stamped, never faded. Hidden
+   initial states exist only under html.motion (script-added), so with
+   JS off the page renders complete.                                */
+@keyframes gDraw{to{transform:scaleX(1)}}
+@keyframes gStamp{from{opacity:0}to{opacity:1}}
+@keyframes gBlink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+html.motion .rise{opacity:0;transform:translateY(4px)}
+html.motion .rise.in{opacity:1;transform:none;
+  transition:opacity .45s cubic-bezier(.33,1,.68,1),transform .45s cubic-bezier(.33,1,.68,1)}
+
+/* hero rule + wordmark */
+html.motion .wordmark .r{transform:scaleX(0);transform-origin:left}
+html.motion .wordmark.in .r{transform:scaleX(1);transition:transform .5s cubic-bezier(.2,0,0,1) .1s}
+
+/* the replay */
+html.motion .spec:not(.go) .tl{opacity:0}
+html.motion .spec:not(.go) .tag{opacity:0}
+html.motion .spec .cur{display:none}
+html.motion .spec.go .tl{animation:gStamp 1ms steps(1,end) both}
+html.motion .spec.go .t1{animation-delay:.15s}
+html.motion .spec.go .t2{animation-delay:.65s}
+html.motion .spec.go .t3{animation-delay:1.15s}
+html.motion .spec.go .t4{animation-delay:1.65s}
+html.motion .spec.go .tv{animation-delay:2.55s}
+html.motion .spec.go .tag{animation:gStamp 1ms steps(1,end) both}
+html.motion .spec.go .g1{animation-delay:1s}
+html.motion .spec.go .g2{animation-delay:1.5s}
+html.motion .spec.go .g3{animation-delay:2s}
+html.motion .spec.go .cur{display:inline-block;width:8px;height:13px;background:var(--stamp);
+  vertical-align:-2px;margin-left:9px;opacity:0;
+  animation:gStamp 1ms steps(1,end) 2.55s both, gBlink 2.2s steps(1,end) 2.8s infinite}
+
+/* records are stamped: numerals first, then the text settles */
+html.motion section:not(.go) .bled{opacity:0}
+html.motion section.go .bled{animation:gStamp 1ms steps(1,end) .05s both}
+
+/* method: three are built — 01,02,03 land in rhythm, 04 waits */
+html.motion .g4:not(.go) .card{opacity:0}
+html.motion .g4.go .card{animation:gStamp 1ms steps(1,end) both}
+html.motion .g4.go .card:nth-child(1){animation-delay:.1s}
+html.motion .g4.go .card:nth-child(2){animation-delay:.25s}
+html.motion .g4.go .card:nth-child(3){animation-delay:.4s}
+html.motion .g4.go .card:nth-child(4){animation-delay:.95s}
+
+/* build-state ledger: rows flush per column, tags after their row */
+html.motion .rows:not(.go) .row{opacity:0}
+html.motion .rows.go .row{animation:gStamp 1ms steps(1,end) both}
+html.motion .rows.go .row:nth-child(1){animation-delay:.05s}
+html.motion .rows.go .row:nth-child(2){animation-delay:.13s}
+html.motion .rows.go .row:nth-child(3){animation-delay:.21s}
+html.motion .rows.go .row:nth-child(4){animation-delay:.29s}
+html.motion .rows.go .row:nth-child(5){animation-delay:.37s}
+html.motion .rows.go .row:nth-child(6){animation-delay:.45s}
+html.motion .rows.go .row:nth-child(7){animation-delay:.53s}
+html.motion .rows:not(.go) .row .v{opacity:0}
+html.motion .rows.go .row .v{animation:gStamp 1ms steps(1,end) both}
+html.motion .rows.go .row:nth-child(1) .v{animation-delay:.3s}
+html.motion .rows.go .row:nth-child(2) .v{animation-delay:.38s}
+html.motion .rows.go .row:nth-child(3) .v{animation-delay:.46s}
+html.motion .rows.go .row:nth-child(4) .v{animation-delay:.54s}
+html.motion .rows.go .row:nth-child(5) .v{animation-delay:.62s}
+html.motion .rows.go .row:nth-child(6) .v{animation-delay:.7s}
+html.motion .rows.go .row:nth-child(7) .v{animation-delay:.78s}
+
+/* the one red chip lands absolutely last */
+html.motion section:not(.go) .pend{opacity:0}
+html.motion section.go .pend{animation:gStamp 1ms steps(1,end) 1.3s both}
+
+/* hero fields ledger */
+html.motion .fields:not(.go) .frow{opacity:0}
+html.motion .fields.go .frow{animation:gStamp 1ms steps(1,end) both}
+html.motion .fields.go .frow:nth-child(1){animation-delay:.05s}
+html.motion .fields.go .frow:nth-child(2){animation-delay:.17s}
+html.motion .fields.go .frow:nth-child(3){animation-delay:.29s}
+
+/* settle: every sequence force-completes after its planned duration via
+   hard properties — hidden tabs suspend animation timelines, so the final
+   state must not depend on one. The cursor blink is exempt. */
+html.motion .spec.settle .tl,html.motion .spec.settle .tag,
+html.motion .settle .row,html.motion .settle .row .v,html.motion .settle .card,
+html.motion .settle .frow,html.motion section.settle .bled,html.motion section.settle .pend{
+  animation:none !important;opacity:1 !important}
+
+@media(prefers-reduced-motion:reduce){
+  html.motion *{animation:none !important;transition:none !important}
+  html.motion .rise,html.motion .tl,html.motion .tag,html.motion .bled,
+  html.motion .card,html.motion .row,html.motion .row .v,html.motion .pend,
+  html.motion .frow{opacity:1 !important;transform:none !important}
+  html.motion .wordmark .r{transform:scaleX(1) !important}
+  html.motion .spec .cur{display:inline-block !important;opacity:1 !important}
+}
+
 </style>
 </head>
 <body>
@@ -228,12 +324,12 @@ footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono)
     <div class="spec">
       <div class="spec-h"><span>CERTIFIED BAKED SCENARIO &middot; EXAMPLE OUTPUT</span><span>EXIT CODE IS THE VERDICT</span></div>
       <div class="spec-b">
-          <span class="g">$</span> nonlimi test --baseline artifacts/baseline/<br />
-          <span class="g">&rsaquo;</span> scenario 01 &nbsp;&nbsp;&nbsp;<span class="pass">PASS</span><br />
-          <span class="g">&rsaquo;</span> scenario 02 &nbsp;&nbsp;&nbsp;<span class="pass">PASS</span><br />
-          <span class="g">&rsaquo;</span> scenario 03 &nbsp;&nbsp;&nbsp;<span class="fail">FAIL</span>
-          <span class="g">&nbsp;min_clearance below baseline</span><br /><br />
-          <span class="fail">VERDICT FAIL</span> <span class="g">&middot; EXIT 1</span>
+          <span class="tl t1"><span class="g">$</span> nonlimi test --baseline artifacts/baseline/</span><br />
+          <span class="tl t2"><span class="g">&rsaquo;</span> scenario 01 &nbsp;&nbsp;&nbsp;<span class="tag g1"><span class="pass">PASS</span></span></span><br />
+          <span class="tl t3"><span class="g">&rsaquo;</span> scenario 02 &nbsp;&nbsp;&nbsp;<span class="tag g2"><span class="pass">PASS</span></span></span><br />
+          <span class="tl t4"><span class="g">&rsaquo;</span> scenario 03 &nbsp;&nbsp;&nbsp;<span class="tag g3"><span class="fail">FAIL</span>
+          <span class="g">&nbsp;min_clearance below baseline</span></span></span><br /><br />
+          <span class="tl tv"><span class="fail">VERDICT FAIL</span> <span class="g">&middot; EXIT 1</span></span><span class="cur"></span>
         </div>
     </div>
 
@@ -406,5 +502,52 @@ footer{background:var(--ink);color:rgba(236,238,239,.62);font-family:var(--mono)
   </div>
 </footer>
 
+<script>
+(function () {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('motion');
+
+  var rises = Array.prototype.slice.call(document.querySelectorAll(
+    'section .lbl, section h1, section h2, section p, section .note, .sub, .lede-strong'));
+  rises.forEach(function (n) { n.classList.add('rise'); });
+  var mark = document.querySelector('.wordmark');
+  var seqs = Array.prototype.slice.call(document.querySelectorAll('.spec, .fields, .g4, .rows'));
+  var secs = Array.prototype.slice.call(document.querySelectorAll('section'));
+
+  function inView(n){ var r=n.getBoundingClientRect(); return r.top < window.innerHeight && r.bottom > 0; }
+  function fire(n){
+    if (n === mark) { n.classList.add('in'); return; }
+    if (n.classList && n.classList.contains('rise')) {
+      var sibs = Array.prototype.filter.call(n.parentNode.children, function (c) {
+        return c.classList && c.classList.contains('rise');
+      });
+      var i = Math.min(sibs.indexOf(n), 5);
+      n.style.transitionDelay = (i > 0 ? 150 + i * 55 : 150) + 'ms';
+      n.classList.add('in');
+    } else {
+      n.classList.add('go');
+      var wait = n.classList.contains('spec') ? 3200 : 2400;
+      setTimeout(function () { n.classList.add('settle'); }, wait);
+    }
+  }
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      fire(e.target); io.unobserve(e.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+
+  var all = rises.concat(seqs).concat(secs); if (mark) all.push(mark);
+  all.forEach(function (n) { io.observe(n); });
+
+  function revealNow(n){ if(n.style) n.style.transitionDelay='0ms'; fire(n); }
+  requestAnimationFrame(function () { all.forEach(function (n) { if (inView(n)) revealNow(n); }); });
+  setTimeout(function () { all.forEach(revealNow); }, 1600);
+  window.addEventListener('load', function () {
+    all.forEach(function (n) { if (inView(n)) revealNow(n); });
+  });
+})();
+</script>
 </body>
 </html>
