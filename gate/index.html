@@ -112,7 +112,10 @@ p+p{margin-top:16px}
   font-family:var(--sans); font-weight:600; text-transform:uppercase;
   letter-spacing:.06em; font-size:34px; line-height:1; display:block;
 }
-.wordmark .r{display:block;height:3px;background:var(--stamp);margin-top:7px}
+.wordmark .r{display:block;height:2px;background:var(--stock);margin-top:8px;
+  width:calc(100% + 1.2ch);position:relative}
+.wordmark .r::after{content:"";position:absolute;right:0;bottom:0;width:3px;height:10px;
+  background:var(--stamp)}
 .wordmark .d{
   display:block; font-family:var(--mono); font-size:11px;
   color:rgba(236,238,239,.62); margin-top:8px; letter-spacing:0;
@@ -212,9 +215,9 @@ html.motion .spec.go .t3{animation-delay:1.15s}
 html.motion .spec.go .t4{animation-delay:1.65s}
 html.motion .spec.go .tv{animation-delay:2.55s}
 html.motion .spec.go .tag{animation:gStamp 1ms steps(1,end) both}
-html.motion .spec.go .g1{animation-delay:1s}
-html.motion .spec.go .g2{animation-delay:1.5s}
-html.motion .spec.go .g3{animation-delay:2s}
+html.motion .spec.go .tg1{animation-delay:1s}
+html.motion .spec.go .tg2{animation-delay:1.5s}
+html.motion .spec.go .tg3{animation-delay:2s}
 html.motion .spec.go .cur{display:inline-block;width:8px;height:13px;background:var(--stamp);
   vertical-align:-2px;margin-left:9px;opacity:0;
   animation:gStamp 1ms steps(1,end) 2.55s both, gBlink 2.2s steps(1,end) 2.8s infinite}
@@ -289,8 +292,8 @@ html.motion .settle .frow,html.motion section.settle .bled,html.motion section.s
   <div class="rail-fields">
     <div class="rail-f">PROGRAM</div>
     <div class="rail-f"><b>EARLY PARTNER COHORT</b></div>
-    <div class="rail-f">REV A</div>
-    <div class="rail-f">2026&ndash;07&ndash;31</div>
+    <div class="rail-f">REV B</div>
+    <div class="rail-f">2026&ndash;08&ndash;01</div>
   </div>
   <nav class="rail-nav">
     <a href="#problem">01 PROBLEM</a>
@@ -325,9 +328,9 @@ html.motion .settle .frow,html.motion section.settle .bled,html.motion section.s
       <div class="spec-h"><span>CERTIFIED BAKED SCENARIO &middot; EXAMPLE OUTPUT</span><span>EXIT CODE IS THE VERDICT</span></div>
       <div class="spec-b">
           <span class="tl t1"><span class="g">$</span> nonlimi test --baseline artifacts/baseline/</span><br />
-          <span class="tl t2"><span class="g">&rsaquo;</span> scenario 01 &nbsp;&nbsp;&nbsp;<span class="tag g1"><span class="pass">PASS</span></span></span><br />
-          <span class="tl t3"><span class="g">&rsaquo;</span> scenario 02 &nbsp;&nbsp;&nbsp;<span class="tag g2"><span class="pass">PASS</span></span></span><br />
-          <span class="tl t4"><span class="g">&rsaquo;</span> scenario 03 &nbsp;&nbsp;&nbsp;<span class="tag g3"><span class="fail">FAIL</span>
+          <span class="tl t2"><span class="g">&rsaquo;</span> scenario 01 &nbsp;&nbsp;&nbsp;<span class="tag tg1"><span class="pass">PASS</span></span></span><br />
+          <span class="tl t3"><span class="g">&rsaquo;</span> scenario 02 &nbsp;&nbsp;&nbsp;<span class="tag tg2"><span class="pass">PASS</span></span></span><br />
+          <span class="tl t4"><span class="g">&rsaquo;</span> scenario 03 &nbsp;&nbsp;&nbsp;<span class="tag tg3"><span class="fail">FAIL</span>
           <span class="g">&nbsp;min_clearance below baseline</span></span></span><br /><br />
           <span class="tl tv"><span class="fail">VERDICT FAIL</span> <span class="g">&middot; EXIT 1</span></span><span class="cur"></span>
         </div>
@@ -496,7 +499,7 @@ html.motion .settle .frow,html.motion section.settle .bled,html.motion section.s
   <div class="field foot wrap">
     <span>NONLIMI DYNAMICS S.L. &middot; <b>MADRID, ES</b></span>
     <span>PREPARED BY <b>S.P.</b></span>
-    <span>REV <b>A</b> &middot; 2026&ndash;07&ndash;31</span>
+    <span>REV <b>B</b> &middot; 2026&ndash;08&ndash;01</span>
     <span><a href="/" style="border-bottom:1px solid rgba(236,238,239,.3)">&larr; NONLIMI.COM</a></span>
     <span>&copy; 2026 NONLIMI DYNAMICS S.L.</span>
   </div>
